@@ -1,0 +1,9 @@
+<resources>
+    <string name="base">Base</string>
+    <string name="keyboardNumber">123</string>
+    <string name="keyboardAlphabetic">ABC</string>
+	<string name="keyboardButtonSeg">Seg.</string>
+	<string name="ok">OK</string>
+	<string name="bannerItem">BannerItem</string>
+	<string name="title"></string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="KeyboardAttribute">
+        <attr name="textView" format="reference"/>
+        <attr name="type" format="string"/>
+    </declare-styleable>
+    
+	<declare-styleable name="KeyButtonAttribute">
+        <attr name="button_key" format="string"/>
+        <attr name="button_method" format="string"/>
+    </declare-styleable>
+    
+    <declare-styleable name="KeyImageAttribute">
+        <attr name="image_method" format="string"/>
+    </declare-styleable>
+</resources>

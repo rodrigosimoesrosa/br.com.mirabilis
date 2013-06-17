@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/popupBackground"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_black"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:text="@string/base"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:minHeight="50dp"
+            android:layout_weight=".7"
+            android:layout_gravity="center"
+            android:background="@drawable/rectangle_white" >
+
+            <TextView
+                android:id="@+id/txtContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                
+                android:text="oaiosjoidsa asiodjasiodasjoiadjoiaw aas askso qowkwqopk oaiosjoidsa asiodjasiodasjoiadjoiaw aas askso qowkwqopk oaiosjoidsa asiodjasiodasjoiadjoiaw aas askso qowkwqopk"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/buttonOk"
+            android:background="@drawable/selector_button"
+            android:layout_marginBottom="5dp"
+            android:layout_width="120dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:text="@string/ok" />
+    </LinearLayout>
+
+</LinearLayout>
