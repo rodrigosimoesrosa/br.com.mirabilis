@@ -1,7 +1,7 @@
 package br.com.mirabilis.util.request;
 
-import br.com.mirabilis.util.request.listener.DelegateListener;
 import android.os.AsyncTask;
+import br.com.mirabilis.util.request.listener.DelegateListener;
 
 /**
  * AysncTaskBase, tem como objetivo ser uma classe base das async criadas nas @link Activity e seus subtipos.
@@ -20,6 +20,8 @@ public abstract class AsyncTaskBase<T,U,V> extends AsyncTask<T,U,ResponseData<V>
 	
 	@Override
 	protected void onPostExecute(ResponseData<V> response) {
-		this.delegate.onPosExecute(response);
+		if(delegate != null){
+			this.delegate.onPosExecute(response);
+		}
 	}
 }

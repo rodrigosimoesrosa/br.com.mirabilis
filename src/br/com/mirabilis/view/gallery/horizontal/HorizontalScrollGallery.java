@@ -185,12 +185,14 @@ public class HorizontalScrollGallery extends ViewGroup {
     /**
      * Seta urls para downloads e criação de itens personalizados.
      * @param urls
+     * @param useBuffer
+     * @param defaultImage
      */
-    public void setUrls(List<String> urls, boolean useBuffer){
+    public void setUrls(List<String> urls, boolean useBuffer, int defaultImage){
     	this.removeAllViews();
     	List<BitmapView> bmps = new ArrayList<BitmapView>();
     	for(String url : urls){
-    		BitmapView b = new BitmapView(this.context, url, scaleType, useBuffer);
+    		BitmapView b = new BitmapView(this.context, url, defaultImage, scaleType, useBuffer);
     		bmps.add(b);
     	}
     	setViews(bmps);

@@ -6,6 +6,5 @@ package br.com.mirabilis.view.base.popup.listener;
  *
  */
 public interface PopupListener {
-	
 	public void onClose();
 }

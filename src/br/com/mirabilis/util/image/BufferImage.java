@@ -20,7 +20,6 @@ public final class BufferImage {
 	 * @param percent "1f == 100%",".2f == 20%", ".5f == 50%" e assim por diante. 
 	 */
 	private BufferImage(Context context, float percent){
-		
 		singleton = this; 
 		cache = new LruCache<String,Bitmap>(SystemInfo.getMBMemoryAvaliableByPercent(context, percent));	
 	}
@@ -57,7 +56,7 @@ public final class BufferImage {
 	 * @param bmp
 	 * @return Bitmap adicionado
 	 */
-	public static Bitmap addBitmap(String url,Bitmap bmp){
+	public static Bitmap addBitmap(String url, Bitmap bmp){
 		checkBuffer();
 		return singleton.cache.put(url, bmp);
 	}

@@ -9,22 +9,6 @@ package br.com.mirabilis;
 
 public final class R {
     public static final class attr {
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int button_key=0x7f010004;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int button_method=0x7f010005;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -32,19 +16,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int currentValue=0x7f01000a;
+        public static int currentValue=0x7f010005;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int idLayout=0x7f010007;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int image_method=0x7f010006;
+        public static int idLayout=0x7f010002;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -52,7 +28,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int maxValue=0x7f010009;
+        public static int maxValue=0x7f010004;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -60,7 +36,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int minValue=0x7f010008;
+        public static int minValue=0x7f010003;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -81,18 +57,6 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int pageWidth=0x7f010000;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static int textView=0x7f010002;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int type=0x7f010003;
     }
     public static final class color {
         public static int alert=0x7f04008f;
@@ -108,12 +72,23 @@ containing a value of this type.
         public static int black_transparent=0x7f040098;
         public static int blanchedalmond=0x7f04000b;
         public static int blue=0x7f040087;
+        public static int blue_marine=0x7f040099;
         public static int blueviolet=0x7f04005a;
         public static int borderField=0x7f04008d;
         public static int borderbutton=0x7f040094;
         public static int borderbuttonselected=0x7f040095;
         public static int brown=0x7f04004e;
         public static int burlywood=0x7f040034;
+        public static int button_blue=0x7f04009e;
+        public static int button_blue_pressed=0x7f04009f;
+        public static int button_gray=0x7f0400a0;
+        public static int button_gray_pressed=0x7f0400a1;
+        public static int button_gray_shadow=0x7f0400a2;
+        public static int button_green=0x7f04009c;
+        public static int button_green_pressed=0x7f04009d;
+        public static int button_red=0x7f04009a;
+        public static int button_red_pressed=0x7f04009b;
+        public static int button_shadow=0x7f0400a3;
         public static int buttonbackground=0x7f040091;
         public static int buttonbackgroundseletected=0x7f040092;
         public static int cadetblue=0x7f04006c;
@@ -264,36 +239,42 @@ containing a value of this type.
         public static int button=0x7f020001;
         public static int button_pressed=0x7f020002;
         public static int ic_launcher=0x7f020003;
-        public static int number_picker_dec_selector=0x7f020004;
-        public static int number_picker_inc_selector=0x7f020005;
-        public static int rectangle_black=0x7f020006;
-        public static int rectangle_white=0x7f020007;
-        public static int selector_button=0x7f020008;
-        public static int unknow=0x7f020009;
+        public static int next=0x7f020004;
+        public static int next_pressed=0x7f020005;
+        public static int next_selector=0x7f020006;
+        public static int number_picker_dec_selector=0x7f020007;
+        public static int number_picker_inc_selector=0x7f020008;
+        public static int previows=0x7f020009;
+        public static int previows_pressed=0x7f02000a;
+        public static int previows_selector=0x7f02000b;
+        public static int rectangle_black=0x7f02000c;
+        public static int rectangle_white=0x7f02000d;
+        public static int selector_button=0x7f02000e;
+        public static int unknow=0x7f02000f;
     }
     public static final class id {
         public static int btnDecrement=0x7f080006;
         public static int btnIncrement=0x7f080005;
-        public static int buttonOk=0x7f08000c;
+        public static int container=0x7f080008;
         public static int gallery=0x7f080000;
+        public static int gallery_container=0x7f08000a;
         public static int imageView=0x7f080002;
-        public static int layout=0x7f080008;
-        public static int menuContent=0x7f080007;
-        public static int popupBackground=0x7f080009;
+        public static int menuContent=0x7f08000b;
+        public static int next=0x7f080009;
         public static int preloader=0x7f080003;
+        public static int previows=0x7f080007;
         public static int relativeLayout=0x7f080001;
-        public static int txtContent=0x7f08000b;
         public static int txtTarget=0x7f080004;
-        public static int txtTitle=0x7f08000a;
     }
     public static final class layout {
         public static int banner=0x7f030000;
         public static int bitmap_view=0x7f030001;
         public static int def_number_picker=0x7f030002;
-        public static int horizontal_gallery_item=0x7f030003;
-        public static int menu_base=0x7f030004;
-        public static int mirabilis=0x7f030005;
-        public static int popup_base=0x7f030006;
+        public static int grid_gallery=0x7f030003;
+        public static int grid_gallery_scroll=0x7f030004;
+        public static int horizontal_gallery_item=0x7f030005;
+        public static int menu_base=0x7f030006;
+        public static int mirabilis=0x7f030007;
     }
     public static final class string {
         public static int bannerItem=0x7f060005;
@@ -320,6 +301,12 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static int AppTheme=0x7f070001;
+        public static int DialogTheme=0x7f070006;
+        public static int TitleShadow=0x7f070007;
+        public static int keyboardButtons=0x7f070003;
+        public static int textAccount=0x7f070004;
+        public static int textAccountProduct=0x7f070005;
+        public static int textButtons=0x7f070002;
     }
     public static final class styleable {
         /** Attributes that can be used with a HorizontalScrollGallery.
@@ -369,115 +356,6 @@ containing a value of this type.
           @attr name android:pageWidth
         */
         public static final int HorizontalScrollGallery_pageWidth = 0;
-        /** Attributes that can be used with a KeyButtonAttribute.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #KeyButtonAttribute_button_key br.com.mirabilis:button_key}</code></td><td></td></tr>
-           <tr><td><code>{@link #KeyButtonAttribute_button_method br.com.mirabilis:button_method}</code></td><td></td></tr>
-           </table>
-           @see #KeyButtonAttribute_button_key
-           @see #KeyButtonAttribute_button_method
-         */
-        public static final int[] KeyButtonAttribute = {
-            0x7f010004, 0x7f010005
-        };
-        /**
-          <p>This symbol is the offset where the {@link br.com.mirabilis.R.attr#button_key}
-          attribute's value can be found in the {@link #KeyButtonAttribute} array.
-
-
-          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:button_key
-        */
-        public static final int KeyButtonAttribute_button_key = 0;
-        /**
-          <p>This symbol is the offset where the {@link br.com.mirabilis.R.attr#button_method}
-          attribute's value can be found in the {@link #KeyButtonAttribute} array.
-
-
-          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:button_method
-        */
-        public static final int KeyButtonAttribute_button_method = 1;
-        /** Attributes that can be used with a KeyImageAttribute.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #KeyImageAttribute_image_method br.com.mirabilis:image_method}</code></td><td></td></tr>
-           </table>
-           @see #KeyImageAttribute_image_method
-         */
-        public static final int[] KeyImageAttribute = {
-            0x7f010006
-        };
-        /**
-          <p>This symbol is the offset where the {@link br.com.mirabilis.R.attr#image_method}
-          attribute's value can be found in the {@link #KeyImageAttribute} array.
-
-
-          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:image_method
-        */
-        public static final int KeyImageAttribute_image_method = 0;
-        /** Attributes that can be used with a KeyboardAttribute.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #KeyboardAttribute_textView br.com.mirabilis:textView}</code></td><td></td></tr>
-           <tr><td><code>{@link #KeyboardAttribute_type br.com.mirabilis:type}</code></td><td></td></tr>
-           </table>
-           @see #KeyboardAttribute_textView
-           @see #KeyboardAttribute_type
-         */
-        public static final int[] KeyboardAttribute = {
-            0x7f010002, 0x7f010003
-        };
-        /**
-          <p>This symbol is the offset where the {@link br.com.mirabilis.R.attr#textView}
-          attribute's value can be found in the {@link #KeyboardAttribute} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:textView
-        */
-        public static final int KeyboardAttribute_textView = 0;
-        /**
-          <p>This symbol is the offset where the {@link br.com.mirabilis.R.attr#type}
-          attribute's value can be found in the {@link #KeyboardAttribute} array.
-
-
-          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:type
-        */
-        public static final int KeyboardAttribute_type = 1;
         /** Attributes that can be used with a NumberPickerAttribute.
            <p>Includes the following attributes:</p>
            <table>
@@ -495,7 +373,7 @@ containing a value of this type.
            @see #NumberPickerAttribute_minValue
          */
         public static final int[] NumberPickerAttribute = {
-            0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a
+            0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005
         };
         /**
           <p>This symbol is the offset where the {@link br.com.mirabilis.R.attr#currentValue}

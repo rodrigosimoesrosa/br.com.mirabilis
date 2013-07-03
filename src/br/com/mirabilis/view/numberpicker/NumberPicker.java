@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,6 +31,8 @@ public class NumberPicker extends LinearLayout {
 	private TextView txtTarget;
 	private View btnIncrement;
 	private View btnDecrement;
+	
+	private Animation anim;
 
 	public NumberPicker(Context context, AttributeSet attrs) {
 
@@ -48,7 +51,7 @@ public class NumberPicker extends LinearLayout {
 		TypedArray array = getContext().obtainStyledAttributes(attrs,
 				R.styleable.NumberPickerAttribute);
 
-		this.idLayout = array.getInteger(
+		this.idLayout = array.getResourceId(
 				R.styleable.NumberPickerAttribute_idLayout, DEFAULT_ID_LAYOUT);
 		this.minValue = array.getInteger(
 				R.styleable.NumberPickerAttribute_minValue, DEFAULT_MIN_VALUE);
@@ -62,7 +65,7 @@ public class NumberPicker extends LinearLayout {
 
 	@Override
 	protected void onFinishInflate() {
-		
+
 		super.onFinishInflate();
 
 		LayoutInflater inflater = (LayoutInflater) getContext()
@@ -73,7 +76,6 @@ public class NumberPicker extends LinearLayout {
 
 	private void findComponents() {
 
-		
 		txtTarget = (TextView) findViewById(R.id.txtTarget);
 
 		if (txtTarget instanceof EditText) {
@@ -88,79 +90,85 @@ public class NumberPicker extends LinearLayout {
 	@Override
 	protected void onAttachedToWindow() {
 
-		
 		super.onAttachedToWindow();
 
 		findComponents();
-		
-		if(!isValidValue(currentValue))
+
+		if (!isValidValue(currentValue))
 			currentValue = minValue;
-			
+
 		updateTextValue();
 		setListeners();
 	}
 
 	private void setListeners() {
 
-		RepeatListener repeatListener = new RepeatListener(400, 100, new OnClickListener() {
-			
-			public void onClick(View v) {
-				
-				if(v == btnIncrement){
-					
-					increment();
-				} else if (v == btnDecrement) {
+		RepeatListener repeatListener = new RepeatListener(400, 100,
+				new OnClickListener() {
 
-					decrement();
-				}
-			}
-		});
-		
+					public void onClick(View v) {
+
+						if(anim != null)
+							v.startAnimation(anim);
+						
+						if (v == btnIncrement) {
+
+							increment();
+						} else if (v == btnDecrement) {
+
+							decrement();
+						}
+					}
+				});
+
 		btnIncrement.setOnTouchListener(repeatListener);
 		btnDecrement.setOnTouchListener(repeatListener);
-		
-		if(txtTarget instanceof EditText){
-		
+
+		if (txtTarget instanceof EditText) {
+
 			txtTarget.addTextChangedListener(new TextWatcher() {
 
-				public void onTextChanged(CharSequence s, int start, int before,
-						int count) {
-	
+				public void onTextChanged(CharSequence s, int start,
+						int before, int count) {
+
 					String text = s.toString();
-	
+
 					if (text.length() > 0) {
-	
+
 						if (!text.equals(Integer.toString(currentValue))) {
-	
+
 							int newValue = Integer.parseInt(text);
-	
+
 							if (isValidValue(newValue))
 								currentValue = newValue;
-							
+
 							updateTextValue();
 						}
-					} 
-					else{
+					} else {
 						currentValue = minValue;
 						updateTextValue();
 					}
-					
-					Selection.setSelection(txtTarget.getEditableText(), txtTarget.getText().length());
+
+					Selection.setSelection(txtTarget.getEditableText(),
+							txtTarget.getText().length());
 				}
-	
-				public void beforeTextChanged(CharSequence s, int start, int count,
-						int after) {}
-	
-				public void afterTextChanged(Editable s) {}
+
+				public void beforeTextChanged(CharSequence s, int start,
+						int count, int after) {
+				}
+
+				public void afterTextChanged(Editable s) {
+				}
 			});
 		}
-		
+
 		txtTarget.setOnFocusChangeListener(new OnFocusChangeListener() {
-			
+
 			public void onFocusChange(View v, boolean hasFocus) {
 
-				if(hasFocus())
-					Selection.setSelection(txtTarget.getEditableText(), txtTarget.getText().length());
+				if (hasFocus())
+					Selection.setSelection(txtTarget.getEditableText(),
+							txtTarget.getText().length());
 			}
 		});
 	}
@@ -183,14 +191,15 @@ public class NumberPicker extends LinearLayout {
 		}
 	}
 
-	private boolean isValidValue(int value){
-		
+	private boolean isValidValue(int value) {
+
 		return value >= minValue && value <= maxValue;
 	}
-	
+
 	private void updateTextValue() {
 
-		txtTarget.setText(Integer.toString(currentValue));
+		if (txtTarget != null)
+			txtTarget.setText(Integer.toString(currentValue));
 	}
 
 	public void setMinValue(int value) {
@@ -229,28 +238,34 @@ public class NumberPicker extends LinearLayout {
 			updateTextValue();
 		}
 	}
-	
+
 	/**
 	 * Retorna o valor atual do NumberPicker.
+	 * 
 	 * @return
 	 */
-	public int getCurrentValue(){
+	public int getCurrentValue() {
 		return this.currentValue;
 	}
-	
+
 	@Override
 	public void setEnabled(boolean enabled) {
-	
+
 		txtTarget.setEnabled(enabled);
 		btnDecrement.setEnabled(enabled);
 		btnIncrement.setEnabled(enabled);
 	}
-	
+
 	@Override
 	public void setClickable(boolean clickable) {
 
 		txtTarget.setClickable(clickable);
 		btnDecrement.setClickable(clickable);
 		btnIncrement.setClickable(clickable);
+	}
+	
+	public void setButtonsAnimation(Animation anim){
+		
+		this.anim = anim;
 	}
 }

@@ -2,7 +2,6 @@ package br.com.mirabilis.view.image;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,17 +26,25 @@ public class BitmapView extends RelativeLayout {
 	private ImageView imageView;
 	private String url;
 	private int imageResource;
+	private int defaultImage;
 	private ScaleType scaleType;
 	private boolean useBuffer;
 	private AsyncBitmapTask task;
-	private int layout;
+	private ImageType type;
+	
+	/**
+	 * Tipos de imagem.
+	 * @author Rodrigo Simões Rosa.
+	 */
+	public enum ImageType {
+		RESOURCE, URL;
+	}
 	
 	/**
 	 * Bloco de inicialização.
 	 */
 	{
 		this.useBuffer = false;
-		this.layout = R.layout.bitmap_view;
 	}
 	
 	/**
@@ -74,9 +81,11 @@ public class BitmapView extends RelativeLayout {
 	 * @param type
 	 * @param useBuffer
 	 */
-	public BitmapView(Context context, String url, ScaleType type, boolean useBuffer) {
+	public BitmapView(Context context, String url, int defaultImage, ScaleType type, boolean useBuffer) {
 		this(context,type, useBuffer);
 		this.url = url;
+		this.type = ImageType.URL;
+		this.defaultImage = defaultImage;
 	}
 	
 	/**
@@ -88,6 +97,7 @@ public class BitmapView extends RelativeLayout {
 	 */
 	public BitmapView(Context context, int resource, ScaleType type, boolean useBuffer){
 		this(context,type,useBuffer);
+		this.type = ImageType.RESOURCE;
 		this.imageResource = resource;
 	}
 	
@@ -104,17 +114,17 @@ public class BitmapView extends RelativeLayout {
 		this.useBuffer = useBuffer;
 		
 		LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(layout, this);
+        inflater.inflate(R.layout.bitmap_view, this);
         this.initComponents();
 	}
 	
 	@Override
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
-		if(url != null){
+		if(type.equals(ImageType.URL)){
 			download();
 		}else{
-			delegate.onPosExecute(new ResponseData<Bitmap>(true, null, BitmapFactory.decodeResource(context.getResources(), imageResource)));
+			delegate.onPosExecute(new ResponseData<Bitmap>(true, null, null));
 		}
 	}
 	
@@ -135,9 +145,17 @@ public class BitmapView extends RelativeLayout {
 		public void onPosExecute(ResponseData<Bitmap> response) {
 			preloader.setVisibility(View.GONE);
 			if(response.isSuccessfully()){
-				imageView.setImageBitmap(response.getData());
+				if(type.equals(ImageType.RESOURCE)){
+					imageView.setImageResource(imageResource);	
+				}else{
+					imageView.setImageBitmap(response.getData());
+				}
 			}else{
-				imageView.setImageDrawable(getResources().getDrawable(R.drawable.unknow));
+				if(defaultImage == 0){
+					imageView.setImageDrawable(getResources().getDrawable(R.drawable.unknow));
+				}else{
+					imageView.setImageDrawable(getResources().getDrawable(defaultImage));	
+				}
 			}
 			imageView.setScaleType(scaleType);
 		}

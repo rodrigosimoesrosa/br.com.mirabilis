@@ -7,10 +7,10 @@ import java.util.TimerTask;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView.ScaleType;
 import br.com.mirabilis.R;
 import br.com.mirabilis.view.gallery.horizontal.HorizontalScrollGallery;
 import br.com.mirabilis.view.gallery.horizontal.HorizontalScrollGallery.OnScrollListener;
@@ -35,6 +35,7 @@ public class BannerFragment extends Fragment {
 	private int delay;
 	
 	private boolean useBuffer;
+	private int defaultImage;
 	
 	/**
 	 * Bloco de inicialização.
@@ -54,8 +55,8 @@ public class BannerFragment extends Fragment {
 	 * @param urls
 	 * @param useBuffer
 	 */
-	public BannerFragment(Activity activity, int layout, List<String> urls, boolean useBuffer){
-		this(activity,urls,useBuffer);
+	public BannerFragment(Activity activity, int layout, List<String> urls, boolean useBuffer, int defaultImage){
+		this(activity,urls,useBuffer, defaultImage);
 		this.layout = layout;
 	}
 	
@@ -65,8 +66,8 @@ public class BannerFragment extends Fragment {
 	 * @param urls
 	 * @param useBuffer
 	 */
-	public BannerFragment(Activity activity, List<String> urls, boolean useBuffer){
-		this(activity, urls);
+	public BannerFragment(Activity activity, List<String> urls, boolean useBuffer, int defaultImage){
+		this(activity, urls, defaultImage);
 		this.useBuffer = useBuffer;
 	}
 	
@@ -75,8 +76,9 @@ public class BannerFragment extends Fragment {
 	 * @param activity
 	 * @param urls
 	 */
-	public BannerFragment(Activity activity, List<String> urls) {
+	public BannerFragment(Activity activity, List<String> urls, int defaultImage) {
 		this.urls = urls;
+		this.defaultImage = defaultImage;
 		this.activity = activity;
 	}
 	
@@ -102,7 +104,6 @@ public class BannerFragment extends Fragment {
 		this.gallery.setOnScrollListener(new OnScrollListener() {
 			
 			public void onViewScrollFinished(int currentPage) {
-				Log.v("setOnScrollListener"," page : " + currentPage);
 				current = currentPage;
 			}
 			
@@ -117,7 +118,7 @@ public class BannerFragment extends Fragment {
 		activity = getActivity();
 		
 		if(activity != null && urls != null){
-			startUrls(this.urls, useBuffer);
+			startUrls(this.urls, useBuffer, defaultImage);
 		}
 	}
 	
@@ -125,12 +126,25 @@ public class BannerFragment extends Fragment {
 	 * Seta as urls que serão inseridas no banner
 	 * @param urls
 	 * @param useBuffer
+	 * @param defaultImage
 	 */
-	public void startUrls(List<String> urls, boolean useBuffer){
+	public void startUrls(List<String> urls, boolean useBuffer, int defaultImage){
+		startUrls(urls, useBuffer, defaultImage, ScaleType.FIT_XY);
+	}
+	
+	/**
+	 * Seta as urls que serão inseridas no banner
+	 * @param urls
+	 * @param useBuffer
+	 * @param defaultImage
+	 */
+	public void startUrls(List<String> urls, boolean useBuffer, int defaultImage, ScaleType scale){
 		this.limit = urls.size();
-		this.gallery.setUrls(urls, useBuffer);
+		this.gallery.setScaleType(scale);
+		this.gallery.setUrls(urls, useBuffer, defaultImage);
 		start();
 	}
+	
 	
 	/**
 	 * Seta as views que serão inseridas no banner.
@@ -147,15 +161,25 @@ public class BannerFragment extends Fragment {
 	 * @param images
 	 */
 	public void startResources(int [] images){
+		startResources(images, ScaleType.FIT_XY, true);
+	}
+	
+	/**
+	 * Seta os resources que serão incluidos no banner.
+	 * @param images
+	 */
+	public void startResources(int [] images, ScaleType scale, boolean useBuffer){
+		this.useBuffer = useBuffer;
 		this.limit = images.length;
 		this.gallery.setResources(images, useBuffer);
+		this.gallery.setScaleType(scale);
 		start();
 	}
 	
 	/**
 	 * Tarefa de tempo que será inicializada através do {@link BannerFragment#timer}
 	 */
-	private TimerTask task = new TimerTask() {
+	private class BannerTimerTask extends TimerTask {
 		
 		@Override
 		public void run() {
@@ -181,6 +205,6 @@ public class BannerFragment extends Fragment {
 			timer.cancel();
 		}
 		timer = new Timer();
-		timer.schedule(task, delay, delay);
+		timer.schedule(new BannerTimerTask(), delay, delay);
 	}
 }

@@ -16,14 +16,6 @@ public class HorizontalScrollGalleryItem <T extends View> extends RelativeLayout
 
 	
 	private T view;
-	private int layout;
-	
-	/**
-	 * bloco de inicialização.
-	 */
-	{
-		this.layout = R.layout.horizontal_gallery_item;
-	}
 	
 	/**
 	 * Construtor que será chamado na inserção através do XML.
@@ -62,7 +54,7 @@ public class HorizontalScrollGalleryItem <T extends View> extends RelativeLayout
 		this.view = view;
 		
 		LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(this.layout, this);
+        inflater.inflate(R.layout.horizontal_gallery_item, this);
     }
 	
 	@Override
