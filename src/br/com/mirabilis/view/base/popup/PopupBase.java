@@ -3,6 +3,7 @@ package br.com.mirabilis.view.base.popup;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.Window;
+import br.com.mirabilis.R;
 import br.com.mirabilis.view.base.popup.listener.PopupListener;
 
 /**
@@ -23,9 +24,24 @@ public abstract class PopupBase<T extends PopupListener> extends Dialog {
 	 * @param listener
 	 */
 	public PopupBase(Context context, int layout, T listener){
-		super(context);
+		super(context, R.style.DialogTheme);
 		initComponent(context, layout, listener);
 		setAttributesForComponent();
+	}
+	
+	/**
+	 * Constructor.
+	 * @param context
+	 * @param layout
+	 */
+	public PopupBase(Context context, int layout){
+		super(context, R.style.DialogTheme);
+		initComponent(context, layout);
+		setAttributesForComponent();
+	}
+
+	private void initComponent(Context context, int layout) {
+		initComponent(context, layout, null);
 	}
 
 	/**
@@ -66,7 +82,9 @@ public abstract class PopupBase<T extends PopupListener> extends Dialog {
 	
 	@Override
 	public void dismiss() {
-		listener.onClose();
+		if(listener != null){
+			listener.onClose();	
+		}
 		super.dismiss();
 	}
 	
