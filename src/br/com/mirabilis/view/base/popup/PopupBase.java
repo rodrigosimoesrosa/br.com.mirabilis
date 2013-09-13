@@ -2,6 +2,7 @@ package br.com.mirabilis.view.base.popup;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.view.MotionEvent;
 import android.view.Window;
 import br.com.mirabilis.R;
 import br.com.mirabilis.view.base.popup.listener.PopupListener;
@@ -16,6 +17,8 @@ public abstract class PopupBase<T extends PopupListener> extends Dialog {
 	protected T listener;
 	protected int layout;
 	protected Context context;
+	
+	private boolean blockedTouchEvent;
 
 	/**
 	 * Constructor.
@@ -80,12 +83,47 @@ public abstract class PopupBase<T extends PopupListener> extends Dialog {
 		setListeners();
 	}
 	
+	/**
+	 * Listener dispatcher from touch.
+	 */
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent event) {
+	    if (!this.blockedTouchEvent) {
+	        return super.dispatchTouchEvent(event);
+	    }
+	    return this.blockedTouchEvent;
+	}
+	
+	/**
+	 * set block in touchEvent
+	 * @param value
+	 */
+	public void setBlockTouchEvent(boolean value){
+		this.blockedTouchEvent = value;
+	}
+	
+	/**
+	 * return block state from touch
+	 * @return
+	 */
+	public boolean isBlockedTouchEvent() {
+		return blockedTouchEvent;
+	}
+	
 	@Override
 	public void dismiss() {
 		if(listener != null){
 			listener.onClose();	
 		}
 		super.dismiss();
+	}
+	
+	/**
+	 * Return listener that set in popup.
+	 * @return
+	 */
+	public T getListener() {
+		return listener;
 	}
 	
 	/**

@@ -1,7 +1,10 @@
 package br.com.mirabilis.util.request.http;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -19,6 +22,7 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
@@ -61,6 +65,38 @@ public class HttpManager {
 	 */
 	public ResponseData<InputStream> get(String url){
 		return get(url, this.timeoutConnection, this.timeoutSocket);
+	}
+	
+	public ResponseData<JSONObject> getJson(String url){
+		String message = null;
+		boolean successfully = false;
+		JSONObject data = null;
+		
+		ResponseData<InputStream> response = get(url);
+		if(response.isSuccessfully()){
+			BufferedReader reader;
+			try {
+				reader = new BufferedReader(new InputStreamReader(response.getData(), "UTF-8"));
+				StringBuilder stringBuilder = new StringBuilder();
+				String temp;
+				while ((temp = reader.readLine()) != null){
+					stringBuilder.append(temp);
+				}
+				data = new JSONObject(stringBuilder.toString());
+				successfully = true;
+			} catch (UnsupportedEncodingException e) {
+				message = e.getMessage();
+			} catch (IOException e) {
+				message = e.getMessage();
+			} catch (JSONException e) {
+				message = e.getMessage();
+			}	
+		}else{
+			message = response.getMessage();
+			successfully = false;
+		}
+		
+		return new ResponseData<JSONObject>(successfully, message, data);
 	}
 	
 	/**
