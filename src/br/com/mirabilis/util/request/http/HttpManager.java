@@ -55,7 +55,7 @@ public class HttpManager {
 	{
 		cryptFormat = HTTP.UTF_8;
 		timeoutConnection = 0;
-		timeoutSocket = 5000;
+		timeoutSocket = 0;
 	}
 	
 	/**
