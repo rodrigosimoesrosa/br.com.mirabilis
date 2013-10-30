@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
-            android:name="br.com.mirabilis.MirabilisActivity">
+            android:name="br.com.mirabilis.view.MirabilisActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
