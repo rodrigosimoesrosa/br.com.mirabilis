@@ -1,128 +1,169 @@
 package br.com.mirabilis.view.text.formatter;
 
-import br.com.mirabilis.view.text.exception.MonetaryFormatException;
-
+import br.com.mirabilis.view.text.exception.MonetaryFormatterException;
 
 /**
- * Classe formatadora de dados do tipo String. Tem como objetivo formatar uma String para o formato monetario.
+ * Formatter class data type String. Aims to format a String to format monetary.
+ * 
  * @author Rodrigo Simões Rosa
  */
-public class MonetaryFormatter {
+public final class MonetaryFormatter {
 
-	public static final char COMMA = ',';
-	public static final String ZEROS = "00";
-	public static final char ZERO = '0';
 	public static final int DEFAULT_LIMIT = 2;
-	public static final char POINTER = '.';
-	
 	private int limit;
-	
+
 	/**
-	 * Construtor.
-	 * @param limit limite permitido por aquela String de acordo com o padrão monetário.
+	 * Enumeration that has {@link MonetaryCharacters}.
+	 * 
+	 * @author Rodrigo Simões Rosa.
+	 * 
+	 */
+	public enum MonetaryCharacters {
+		COMMA(","), ZEROS("00"), ZERO("0"), POINTER(".");
+
+		private String value;
+
+		private MonetaryCharacters(String value) {
+			this.value = value;
+		}
+
+		@Override
+		public String toString() {
+			return value;
+		}
+
+		public char toChar() {
+			return value.charAt(0);
+		}
+	}
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param limit
+	 *            Limit for that string according to the monetary standard.
 	 */
 	public MonetaryFormatter(int limit) {
 		this.limit = limit;
 	}
-	
+
 	/**
-	 * Método que retorna o valor monetário.
+	 * Returns the monetary value.
+	 * 
 	 * @param value
 	 * @return
-	 * @throws MonetaryFormatException
+	 * @throws MonetaryFormatterException
 	 */
-	public String returnMonetaryValue(String value) throws MonetaryFormatException{
-		return returnMonetaryValue(value, limit);
+	public String getMonetary(String value) throws MonetaryFormatterException {
+		return getMonetary(value, limit);
 	}
-	
+
 	/**
-	 * Método estático que retorna valor formatado do tipo dinheiro.
-	 * @param value Valor
+	 * Returns the formatted value type money.
+	 * 
+	 * @param value
+	 *            Valor
 	 * @param limit
 	 * @return
-	 * @throws MonetaryFormatException 
+	 * @throws MonetaryFormatterException
 	 */
-	public static String returnMonetaryValue(String value,int limit) throws MonetaryFormatException{
-		try{
-			char key = value.charAt(value.length() -1);
+	public static String getMonetary(String value, int limit)
+			throws MonetaryFormatterException {
+		try {
+			char key = value.charAt(value.length() - 1);
 			StringBuilder beforeCommon;
 			StringBuilder afterCommon;
-			
-			value = value.substring(0, (value.length() -1)).replaceAll("\\".concat(String.valueOf(POINTER)),"").trim();
-			
-			String [] temp = value.split(String.valueOf(COMMA));
+
+			value = value
+					.substring(0, (value.length() - 1))
+					.replaceAll(
+							"\\".concat(String
+									.valueOf(MonetaryCharacters.POINTER
+											.toString())), "").trim();
+
+			String[] temp = value.split(String.valueOf(MonetaryCharacters.COMMA
+					.toString()));
 			String before = temp[0];
-			
-			if(temp.length > 1){
+
+			if (temp.length > 1) {
 				String after = temp[1];
-				if(after.length() == ZEROS.length()){
-					if(before.length() == limit){
-						temp = value.split(String.valueOf(COMMA));
+				if (after.length() == MonetaryCharacters.ZEROS.toString()
+						.length()) {
+					if (before.length() == limit) {
+						temp = value.split(String
+								.valueOf(MonetaryCharacters.COMMA.toString()));
 						beforeCommon = new StringBuilder(temp[0]);
 						afterCommon = new StringBuilder(temp[1]);
 						insertPointerValue(beforeCommon);
-						return beforeCommon.append(COMMA).append(afterCommon).toString();
-					}	
+						return beforeCommon
+								.append(MonetaryCharacters.COMMA.toString())
+								.append(afterCommon).toString();
+					}
 				}
 			}
-			
+
 			beforeCommon = new StringBuilder();
 			afterCommon = new StringBuilder();
 			boolean comma = false;
-			
-			for(int i = value.length(); i > 0; i--){
-				try{
-					char keyTemp = value.charAt(i -1);	
-					if(keyTemp != COMMA){
-						
-						if(comma){
-							if(beforeCommon.length() < limit){
-								beforeCommon.append(keyTemp);	
+
+			for (int i = value.length(); i > 0; i--) {
+				try {
+					char keyTemp = value.charAt(i - 1);
+					if (keyTemp != MonetaryCharacters.COMMA.toChar()) {
+
+						if (comma) {
+							if (beforeCommon.length() < limit) {
+								beforeCommon.append(keyTemp);
 							}
-						}else {
-							if(afterCommon.length() < 1){
+						} else {
+							if (afterCommon.length() < 1) {
 								afterCommon.append(keyTemp);
-							}else{
+							} else {
 								comma = true;
-								if(beforeCommon.length() < limit){
+								if (beforeCommon.length() < limit) {
 									beforeCommon.append(keyTemp);
 								}
 							}
 						}
 					}
-				}catch(StringIndexOutOfBoundsException e){
-					throw new MonetaryFormatException("Ocorreu um erro na formatação!");
+				} catch (StringIndexOutOfBoundsException e) {
+					throw new MonetaryFormatterException(
+							"An error has occurred in formatting!");
 				}
 			}
 			afterCommon.reverse();
 			beforeCommon.reverse();
-			
-			if(beforeCommon.toString().equals("")){
-				beforeCommon.append(ZERO);
+
+			if (beforeCommon.toString().equals("")) {
+				beforeCommon.append(MonetaryCharacters.ZERO.toString());
 			}
-			
-			beforeCommon.replace(0, beforeCommon.length(), Integer.valueOf(beforeCommon.toString()).toString());
-			
+
+			beforeCommon.replace(0, beforeCommon.length(),
+					Integer.valueOf(beforeCommon.toString()).toString());
+
 			insertPointerValue(beforeCommon);
 			afterCommon.append(key);
-			return beforeCommon.append(COMMA).append(afterCommon).toString();
-		}catch(StringIndexOutOfBoundsException e){
-			throw new MonetaryFormatException("Não foi possível recupera o digito de entrada");
+			return beforeCommon.append(MonetaryCharacters.COMMA.toString())
+					.append(afterCommon).toString();
+		} catch (StringIndexOutOfBoundsException e) {
+			throw new MonetaryFormatterException(
+					"Unable to retrieve the digit input");
 		}
 	}
-	
+
 	/**
-	 * Insere os pontos de acordo com os milhares.
+	 * Inserts the points according to the thousands.
+	 * 
 	 * @param value
 	 */
-	public static void insertPointerValue(StringBuilder value){
+	public static void insertPointerValue(StringBuilder value) {
 		int count = 0;
 		value.reverse();
-		for(int j = 0; j < value.length(); j++){
+		for (int j = 0; j < value.length(); j++) {
 			count++;
-			if(count == 4){
+			if (count == 4) {
 				count = 0;
-				value.insert(j, POINTER);
+				value.insert(j, MonetaryCharacters.POINTER.toString());
 			}
 		}
 		value.reverse();

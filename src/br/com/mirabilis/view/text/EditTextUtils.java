@@ -5,17 +5,19 @@ import android.text.Selection;
 import android.widget.EditText;
 
 /**
- * Classe de controle de otimizações nos campos edição de texto.
- * @author Rodrigo Simões Rosa
- *
+ * {@link EditText} utils
+ * 
+ * @author Rodrigo Simões Rosa.
+ * 
  */
-public class FormatterEditText {
-	
+public final class EditTextUtils {
+
 	/**
-	 * Seta o posicionamento do cursor para o ultimo caracter do campo de texto.
+	 * Arrow positioning the cursor to the last character of the text field.
+	 * 
 	 * @param txtField
 	 */
-	public static void setFocusLastPosition(EditText txtField){
+	public final static void setFocusToLastPosition(EditText txtField) {
 		int pos = txtField.getText().length();
 		Editable editable = (Editable) txtField.getText();
 		Selection.setSelection(editable, pos);
