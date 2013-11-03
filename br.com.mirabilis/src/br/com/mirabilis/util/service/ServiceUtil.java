@@ -7,22 +7,27 @@ import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 
 /**
- * Classe que contem métodos utilitários para serviços.
+ * Class has Sevice's util's.
+ * 
  * @author Rodrigo Simões Rosa.
  */
 public class ServiceUtil {
-	
+
 	/**
-	 * Realiza a checagem de um serviço.
+	 * Check is service is running(working).
+	 * 
 	 * @param servicename
 	 * @param context
 	 * @return
 	 */
 	public static boolean isWorkingService(String servicename, Context context) {
-		ActivityManager manager=(ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-		ArrayList<RunningServiceInfo> runningService = (ArrayList<RunningServiceInfo>) manager.getRunningServices(30);
+		ActivityManager manager = (ActivityManager) context
+				.getSystemService(Context.ACTIVITY_SERVICE);
+		ArrayList<RunningServiceInfo> runningService = (ArrayList<RunningServiceInfo>) manager
+				.getRunningServices(30);
 		for (int i = 0; i < runningService.size(); i++) {
-			if (runningService.get(i).service.getClassName().toString().equals(servicename)) {
+			if (runningService.get(i).service.getClassName().toString()
+					.equals(servicename)) {
 				return true;
 			}
 		}
