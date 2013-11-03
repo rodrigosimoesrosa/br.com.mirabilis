@@ -8,7 +8,7 @@ import android.graphics.BitmapFactory;
 import br.com.mirabilis.util.image.BufferImage;
 import br.com.mirabilis.util.request.AsyncTaskBase;
 import br.com.mirabilis.util.request.ResponseData;
-import br.com.mirabilis.util.request.http.HttpManager;
+import br.com.mirabilis.util.request.http.HttpRequest;
 import br.com.mirabilis.util.request.listener.DelegateListener;
 
 /**
@@ -50,12 +50,12 @@ public class AsyncBitmapTask extends AsyncTaskBase<Void, Void, Bitmap> {
 	protected ResponseData<Bitmap> doInBackground(Void... params) {
 		
 		ResponseData<InputStream> response = null;
-		HttpManager request = null;
+		HttpRequest request = null;
 		
 		if(useBuffer){
 			bmp = BufferImage.getBitmap(url);
 			if(bmp == null){
-				request = new HttpManager(context);
+				request = new HttpRequest(context);
 				response = request.get(url);
 				if(response.isSuccessfully()){
 					bmp = BitmapFactory.decodeStream(response.getData());
@@ -68,7 +68,7 @@ public class AsyncBitmapTask extends AsyncTaskBase<Void, Void, Bitmap> {
 				return new ResponseData<Bitmap>(true, null, bmp);
 			}
 		}else{
-			request = new HttpManager(context);
+			request = new HttpRequest(context);
 			response = request.get(url);
 			if(response.isSuccessfully()){
 				bmp = BitmapFactory.decodeStream(response.getData());
