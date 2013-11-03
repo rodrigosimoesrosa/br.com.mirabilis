@@ -16,6 +16,10 @@ import android.widget.TextView;
 import br.com.mirabilis.R;
 import br.com.mirabilis.view.listener.RepeatListener;
 
+/**
+ * NumberPicker Class.
+ * @author Anderson Lasak
+ */
 public class NumberPicker extends LinearLayout {
 
 	private static final int DEFAULT_MIN_VALUE = 0;
@@ -31,7 +35,7 @@ public class NumberPicker extends LinearLayout {
 	private TextView txtTarget;
 	private View btnIncrement;
 	private View btnDecrement;
-	
+
 	private Animation anim;
 
 	public NumberPicker(Context context, AttributeSet attrs) {
@@ -108,9 +112,9 @@ public class NumberPicker extends LinearLayout {
 
 					public void onClick(View v) {
 
-						if(anim != null)
+						if (anim != null)
 							v.startAnimation(anim);
-						
+
 						if (v == btnIncrement) {
 
 							increment();
@@ -263,9 +267,9 @@ public class NumberPicker extends LinearLayout {
 		btnDecrement.setClickable(clickable);
 		btnIncrement.setClickable(clickable);
 	}
-	
-	public void setButtonsAnimation(Animation anim){
-		
+
+	public void setButtonsAnimation(Animation anim) {
+
 		this.anim = anim;
 	}
 }

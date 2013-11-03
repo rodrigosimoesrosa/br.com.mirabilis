@@ -15,8 +15,8 @@ import br.com.mirabilis.util.request.image.AsyncBitmapTask;
 import br.com.mirabilis.util.request.listener.DelegateListener;
 
 /**
- * {@link BitmapView} que pode receber uma url de imagem ou um resource de uma imagem inserida no projeto. 
- * Com isso ela inicializa o carregamento, exibição, e ocultação do objeto {@link ProgressBar}
+ * {@link BitmapView} you may receive an image url or resource to an image embedded in the project.
+ * With that she starts the loading, displaying and hiding the object {@link ProgressBar}
  * @author Rodrigo Simões Rosa
  */
 public class BitmapView extends RelativeLayout {
@@ -33,7 +33,7 @@ public class BitmapView extends RelativeLayout {
 	private ImageType type;
 	
 	/**
-	 * Tipos de imagem.
+	 * Image types.
 	 * @author Rodrigo Simões Rosa.
 	 */
 	public enum ImageType {
@@ -41,14 +41,14 @@ public class BitmapView extends RelativeLayout {
 	}
 	
 	/**
-	 * Bloco de inicialização.
+	 * Boot block.
 	 */
 	{
 		this.useBuffer = false;
 	}
 	
 	/**
-	 * Construtor.
+	 * Constructor.
 	 * @param context
 	 * @param attrs
 	 * @param defStyle
@@ -58,7 +58,7 @@ public class BitmapView extends RelativeLayout {
 	}
 
 	/**
-	 * Construtor.
+	 * Constructor.
 	 * @param context
 	 * @param attrs
 	 */
@@ -67,7 +67,7 @@ public class BitmapView extends RelativeLayout {
 	}
 	
 	/**
-	 * Construtor.
+	 * Constructor.
 	 * @param context
 	 */
 	public BitmapView(Context context) {
@@ -75,7 +75,7 @@ public class BitmapView extends RelativeLayout {
 	}
 	
 	/**
-	 * Construtor que recebe uma url que representará uma imagem a ser baixada.
+	 * Constructor that takes a url to represent an image to be downloaded.
 	 * @param context
 	 * @param url
 	 * @param type
@@ -89,7 +89,7 @@ public class BitmapView extends RelativeLayout {
 	}
 	
 	/**
-	 * Construtor que recebe um id resource que representará uma imagem a ser inserida.
+	 * Constructor that takes an id resource that represents an image to be inserted.
 	 * @param context
 	 * @param resource
 	 * @param type
@@ -102,7 +102,7 @@ public class BitmapView extends RelativeLayout {
 	}
 	
 	/**
-	 * Construtor.
+	 * Constructor.
 	 * @param context
 	 * @param type
 	 * @param useBuffer
@@ -129,8 +129,8 @@ public class BitmapView extends RelativeLayout {
 	}
 	
 	/**
-	 * Realiza o inicio do download, utilizando um objeto do tipo {@link AsyncBitmapTask},
-	 * que faz a parte do carregamento e delega para o {@link BitmapView} a inserção de um {@link Bitmap} no objeto {@link BitmapView}
+	 * Performs start the download, using an object of type {@link AsyncBitmapTask},
+	 * it makes part loading and delegates to the {@link BitmapView} inserting a {@link Bitmap} in object {@link BitmapView}
 	 */
 	private void download(){
 		this.task = new AsyncBitmapTask(context, url, delegate, useBuffer);
@@ -138,7 +138,7 @@ public class BitmapView extends RelativeLayout {
 	}
 	
 	/**
-	 * Listener que será responsável por receber a resposta da tarefa e assim inserir um {@link Bitmap} no {@link BitmapView#imageView}.
+	* Listener that will be responsible for receiving the response of the task and thus enter a {@link Bitmap} in {@link BitmapView#imageView}.
 	*/ 
 	private DelegateListener<Bitmap> delegate = new DelegateListener<Bitmap>() {
 		
@@ -162,7 +162,7 @@ public class BitmapView extends RelativeLayout {
 	};
 	
 	/**
-	 * Inicialização de componentes.
+	 * Initialization of components.
 	 */
 	private void initComponents(){
 		this.preloader = (ProgressBar) this.findViewById(R.id.preloader);

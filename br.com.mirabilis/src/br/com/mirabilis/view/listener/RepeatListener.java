@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 
 /**
- * Classe de repetição de OnClickListener, utilizada até a versão 14 do Android, aonde tem como objetivo disparar o onClickListener enquanto o View estiver sendo pressionado.
+ * Class repetition OnClickListener, used until version 14 Android, where the trigger aims onClickListener while the View is being pressed.
  * @author Rodrigo Simões Rosa & Anderson Lasak.
  */
 public class RepeatListener implements OnTouchListener {
@@ -20,7 +20,7 @@ public class RepeatListener implements OnTouchListener {
 	private Handler handler = new Handler();
 	
 	/**
-	 * Runnable responsável pela iteração das repetições.
+	 * Runnable responsible iteration of repetitions.
 	 */
 	private Runnable runnable = new Runnable() {
 		public void run() {
@@ -32,10 +32,10 @@ public class RepeatListener implements OnTouchListener {
 	};
 
 	/**
-	 * Listener para repetição de chamadas onClickListener.
-	 * @param initialInterval Tempo para iniciar a repetição.
-	 * @param normalInterval Tempo em que a repetição ocorre.
-	 * @param clickListener OnClickListener que será executado nas repetições.
+	 * Listener to repeat calls onClickListener.
+	 * @param initialInterval Time to start repeating.
+	 * @param normalInterval Time repetition occurs.
+	 * @param clickListener OnClickListener that will run in repeats.
 	 */
 	public RepeatListener(int initialInterval, int normalInterval, OnClickListener clickListener) {
 		if (clickListener == null) throw new IllegalArgumentException("null runnable");
@@ -49,6 +49,9 @@ public class RepeatListener implements OnTouchListener {
 	    this.clickListener = clickListener;
 	}
 
+	/**
+	 * OnTouch
+	 */
 	public boolean onTouch(View view, MotionEvent motionEvent) {
 		this.currentMotionEvent = motionEvent;	
 		switch (motionEvent.getAction()) {
