@@ -1,6 +1,16 @@
 package br.com.mirabilis.util.request.http;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.http.HttpException;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
@@ -16,7 +26,7 @@ import br.com.mirabilis.util.request.http.jakarta.HttpJakarta;
  * 
  * @author Rodrigo Simões Rosa.
  */
-public abstract class HttpRequest implements HttpMethod {
+public abstract class HttpRequest implements HttpMethod, HttpParsedMethod {
 
 	protected Context context;
 	protected String cryptFormat;
@@ -91,6 +101,61 @@ public abstract class HttpRequest implements HttpMethod {
 		HttpConnectionParams.setConnectionTimeout(params, connection);
 		HttpConnectionParams.setSoTimeout(params, socket);
 		return params;
+	}
+	
+	/**
+	 * Return list {@link NameValuePair}
+	 * @param map
+	 * @return
+	 */
+	protected List<NameValuePair> getParams(Map<String, Object> map){
+		if(map == null || map.isEmpty()){
+			return null;
+		}
+		
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		Iterator<String> i = map.keySet().iterator();
+		while(i.hasNext()){
+			String key = i.next();
+			Object data = map.get(key);
+			params.add(new BasicNameValuePair(key, String.valueOf(data)));
+		}
+		return params;
+	}
+
+	/**
+	 * Do read bytes of {@link InputStream} @param in.
+	 * 
+	 * @param in
+	 * @return
+	 * @throws IOException
+	 */
+	protected byte[] readBytes(InputStream in) throws IOException {
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+		try {
+			byte[] buf = new byte[1024];
+			int length;
+			while ((length = in.read(buf)) > 0) {
+				bos.write(buf, 0, length);
+			}
+			byte[] bytes = bos.toByteArray();
+			return bytes;
+		} finally {
+			bos.close();
+		}
+	}
+
+	/**
+	 * Do read String of bytes.
+	 * 
+	 * @param in
+	 * @return
+	 * @throws IOException
+	 */
+	protected String readString(InputStream in) throws IOException {
+		byte[] bytes = readBytes(in);
+		String content = new String(bytes);
+		return content;
 	}
 
 	/**

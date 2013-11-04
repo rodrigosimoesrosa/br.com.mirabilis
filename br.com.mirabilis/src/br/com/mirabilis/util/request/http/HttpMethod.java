@@ -1,11 +1,9 @@
 package br.com.mirabilis.util.request.http;
 
 import java.io.InputStream;
-
-import org.json.JSONObject;
+import java.util.Map;
 
 import br.com.mirabilis.util.request.ResponseData;
-import br.com.mirabilis.util.request.http.listener.HttpRequestListener;
 
 /**
  * {@link HttpMethod} of {@link HttpRequest}
@@ -24,8 +22,7 @@ public interface HttpMethod {
 	 *            Timeout will be the waiting time that the client waits.
 	 * @return
 	 */
-	public abstract ResponseData<InputStream> get(String url,
-			int timeoutConnection, int timeoutSocket);
+	public abstract ResponseData<InputStream> get(String url, int timeoutConnection, int timeoutSocket);
 
 	/**
 	 * Call http get.
@@ -36,43 +33,24 @@ public interface HttpMethod {
 	public abstract ResponseData<InputStream> get(String url);
 	
 	/**
-	 * Call http get {@link JSONObject}
+	 * Call http post.
 	 * @param url
+	 * @param map
 	 * @return
 	 */
-	public ResponseData<JSONObject> getJson(String url);
+	public abstract ResponseData<InputStream> post(String url, Map<String, Object> map);
 	
 	/**
-	 * Responsible for sending a post called XML.
-	 * @param url address of request
-	 * @param xml content xml in string
-	 * @param listener to response data.
-	 */
-	public void postXML(String url, String xml, HttpRequestListener<InputStream> listener);
-	
-	
-	/**
-	 * Responsible for sending a post called XML.
-	 * @param url address of request.
-	 * @param xml content xml in string.
-	 * @param listener to response data.
-	 * @param timeoutConnection
-	 *            Timeout that will run until the connection established.
-	 * @param timeoutSocket
-	 *            Timeout will be the waiting time that the client waits.
-	 */
-	public void postXML(String url, String xml, HttpRequestListener<InputStream> listener, String cryptFormat, int timeoutConnection, int timeoutSocket);
-	
-	/**
-	 * The caller sending a Json post.
+	 * Call http get.
 	 * 
-	 * @param url address of request.
-	 * @param json content json to send.
-	 * @param listener to response data.
+	 * @param url
+	 * @param map 
 	 * @param timeoutConnection
 	 *            Timeout that will run until the connection established.
 	 * @param timeoutSocket
 	 *            Timeout will be the waiting time that the client waits.
+	 * @return
 	 */
-	public void postJson(String url, JSONObject json, HttpRequestListener<InputStream> listener, String cryptFormat,int timeoutConnection, int timeoutSocket);
+	public abstract ResponseData<InputStream> post(String url, Map<String, Object> map, int timeoutConnection, int timeoutSocket);
+	
 }

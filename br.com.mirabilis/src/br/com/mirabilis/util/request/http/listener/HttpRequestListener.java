@@ -7,13 +7,13 @@ import br.com.mirabilis.util.request.http.HttpRequest;
  * Interface of {@link HttpRequest}
  * @author Rodrigo Simões Rosa.
  *
- * @param <InputStrem>
+ * @param <T>
  */
-public interface HttpRequestListener<InputStrem> {
+public interface HttpRequestListener<T> {
 	
 	/**
 	 * Method that result of request {@link HttpRequest} 
 	 * @param data
 	 */
-	public void onResponseData(ResponseData<InputStrem> data);
+	public void onResponseData(ResponseData<T> data);
 }

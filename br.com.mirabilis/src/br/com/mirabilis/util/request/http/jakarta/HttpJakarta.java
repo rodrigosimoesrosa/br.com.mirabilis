@@ -5,12 +5,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
@@ -88,6 +92,43 @@ public final class HttpJakarta extends HttpRequest {
 		}
 	}
 
+	public ResponseData<InputStream> post(String url, Map<String, Object> map) {
+		return post(url, map, this.timeoutConnection, this.timeoutSocket);
+	}
+
+	@SuppressWarnings("finally")
+	public ResponseData<InputStream> post(String url, Map<String, Object> map,
+			int timeoutConnection, int timeoutSocket) {
+
+		String message = null;
+		InputStream data = null;
+		boolean successfully = false;
+		try {
+			HttpClient httpClient = new DefaultHttpClient(getHttpParams(
+					timeoutConnection, timeoutSocket));
+			HttpPost httpPost = new HttpPost(url);
+			List<NameValuePair> params = getParams(map);
+			httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+			HttpResponse response = httpClient.execute(httpPost);
+			HttpEntity entity = response.getEntity();
+			if (entity == null) {
+				successfully = false;
+				message = "HttpRequest.post response is equals null!";
+			} else {
+				data = entity.getContent();
+				successfully = true;
+			}
+		} catch (UnsupportedEncodingException e) {
+			message = e.getMessage();
+		} catch (ClientProtocolException e) {
+			message = e.getMessage();
+		} catch (IOException e) {
+			message = e.getMessage();
+		} finally {
+			return new ResponseData<InputStream>(successfully, message, data);
+		}
+	}
+
 	public ResponseData<JSONObject> getJson(String url) {
 		String message = null;
 		boolean successfully = false;
@@ -117,18 +158,17 @@ public final class HttpJakarta extends HttpRequest {
 			message = response.getMessage();
 			successfully = false;
 		}
-
 		return new ResponseData<JSONObject>(successfully, message, data);
 	}
 
 	public void postXML(String url, String xml,
-			HttpRequestListener<InputStream> listener) {
+			HttpRequestListener<String> listener) {
 		postXML(url, xml, listener, this.cryptFormat, this.timeoutConnection,
 				this.timeoutSocket);
 	}
 
 	public void postXML(String url, String xml,
-			HttpRequestListener<InputStream> listener, String cryptFormat,
+			HttpRequestListener<String> listener, String cryptFormat,
 			int timeoutConnection, int timeoutSocket) {
 
 		HttpClient httpClient = new DefaultHttpClient(getHttpParams(
@@ -138,7 +178,7 @@ public final class HttpJakarta extends HttpRequest {
 		HttpEntity httpEntity = null;
 
 		boolean successfully = false;
-		InputStream data = null;
+		String data = null;
 		String message = null;
 		try {
 			checkWifi();
@@ -156,7 +196,7 @@ public final class HttpJakarta extends HttpRequest {
 			int status = httpResponse.getStatusLine().getStatusCode();
 			if (status == HttpStatus.SC_OK) {
 				if (httpEntity != null) {
-					data = httpResponse.getEntity().getContent();
+					data = readString(httpEntity.getContent());
 					message = EntityUtils.toString(httpEntity);
 					successfully = true;
 				} else {
@@ -172,12 +212,14 @@ public final class HttpJakarta extends HttpRequest {
 		} catch (HttpRequestException e) {
 			message = e.getMessage();
 		} finally {
-			listener.onResponseData(new ResponseData<InputStream>(successfully,
+			listener.onResponseData(new ResponseData<String>(successfully,
 					message, data));
 		}
 	}
 
-	public void postJson(String url, JSONObject json, HttpRequestListener<InputStream> listener, String cryptFormat, int timeoutConnection, int timeoutSocket) {
+	public void postJson(String url, JSONObject json,
+			HttpRequestListener<JSONObject> listener, String cryptFormat,
+			int timeoutConnection, int timeoutSocket) {
 
 		HttpClient httpClient = new DefaultHttpClient(getHttpParams(
 				timeoutConnection, timeoutSocket));
@@ -186,7 +228,7 @@ public final class HttpJakarta extends HttpRequest {
 		HttpEntity httpEntity = null;
 
 		boolean successfully = false;
-		InputStream data = null;
+		JSONObject data = null;
 		String message = null;
 		try {
 			checkWifi();
@@ -201,7 +243,15 @@ public final class HttpJakarta extends HttpRequest {
 			int status = httpResponse.getStatusLine().getStatusCode();
 			if (status == HttpStatus.SC_OK) {
 				if (httpEntity != null) {
-					data = httpResponse.getEntity().getContent();
+					BufferedReader reader = new BufferedReader(
+							new InputStreamReader(httpEntity.getContent(),
+									"UTF-8"));
+					StringBuilder stringBuilder = new StringBuilder();
+					String temp;
+					while ((temp = reader.readLine()) != null) {
+						stringBuilder.append(temp);
+					}
+					data = new JSONObject(stringBuilder.toString());
 					message = EntityUtils.toString(httpEntity);
 					successfully = true;
 				} else {
@@ -216,9 +266,49 @@ public final class HttpJakarta extends HttpRequest {
 			message = e.getMessage();
 		} catch (HttpRequestException e) {
 			message = e.getMessage();
+		} catch (JSONException e) {
+			message = e.getMessage();
 		} finally {
-			listener.onResponseData(new ResponseData<InputStream>(successfully,
+			listener.onResponseData(new ResponseData<JSONObject>(successfully,
 					message, data));
 		}
+	}
+
+	@Override
+	public ResponseData<byte[]> downloadImage(String url) {
+		ResponseData<InputStream> response = get(url);
+		String message = null;
+		byte[] data = null;
+		boolean successfully = false;
+		if (response.isSuccessfully()) {
+			try {
+				data = readBytes(response.getData());
+				successfully = true;
+			} catch (IOException e) {
+				message = response.getMessage();
+			}
+		} else {
+			message = response.getMessage();
+		}
+		return new ResponseData<byte[]>(successfully, message, data);
+	}
+
+	@Override
+	public ResponseData<String> downloadFile(String url) {
+		ResponseData<InputStream> response = get(url);
+		String message = null;
+		String data = null;
+		boolean successfully = false;
+		if (response.isSuccessfully()) {
+			try {
+				data = readString(response.getData());
+				successfully = true;
+			} catch (IOException e) {
+				message = response.getMessage();
+			}
+		} else {
+			message = response.getMessage();
+		}
+		return new ResponseData<String>(successfully, message, data);
 	}
 }
