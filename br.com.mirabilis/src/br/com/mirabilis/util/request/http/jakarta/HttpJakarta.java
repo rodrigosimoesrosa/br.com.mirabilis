@@ -29,7 +29,6 @@ import org.json.JSONObject;
 import android.content.Context;
 import br.com.mirabilis.util.request.ResponseData;
 import br.com.mirabilis.util.request.http.HttpRequest;
-import br.com.mirabilis.util.request.http.exception.HttpRequestException;
 import br.com.mirabilis.util.request.http.listener.HttpRequestListener;
 
 /**
@@ -66,7 +65,7 @@ public final class HttpJakarta extends HttpRequest {
 		boolean successfully = false;
 
 		try {
-			checkWifi();
+			//checkWifi();
 			httpResponse = httpClient.execute(httpGet);
 			httpEntity = httpResponse.getEntity();
 
@@ -84,8 +83,6 @@ public final class HttpJakarta extends HttpRequest {
 		} catch (ClientProtocolException e) {
 			message = e.getMessage();
 		} catch (IOException e) {
-			message = e.getMessage();
-		} catch (HttpRequestException e) {
 			message = e.getMessage();
 		} finally {
 			return new ResponseData<InputStream>(successfully, message, data);
@@ -181,7 +178,7 @@ public final class HttpJakarta extends HttpRequest {
 		String data = null;
 		String message = null;
 		try {
-			checkWifi();
+			//checkWifi();
 			StringEntity stringEntity = new StringEntity(xml, cryptFormat);
 			stringEntity.setContentType(ContentType.XML.toString());
 
@@ -209,8 +206,6 @@ public final class HttpJakarta extends HttpRequest {
 			message = e.getMessage();
 		} catch (IOException e) {
 			message = e.getMessage();
-		} catch (HttpRequestException e) {
-			message = e.getMessage();
 		} finally {
 			listener.onResponseData(new ResponseData<String>(successfully,
 					message, data));
@@ -231,7 +226,7 @@ public final class HttpJakarta extends HttpRequest {
 		JSONObject data = null;
 		String message = null;
 		try {
-			checkWifi();
+			//checkWifi();
 			ByteArrayEntity baEntity = new ByteArrayEntity(json.toString()
 					.getBytes("UTF8"));
 			baEntity.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE,
@@ -263,8 +258,6 @@ public final class HttpJakarta extends HttpRequest {
 		} catch (ClientProtocolException e) {
 			message = e.getMessage();
 		} catch (IOException e) {
-			message = e.getMessage();
-		} catch (HttpRequestException e) {
 			message = e.getMessage();
 		} catch (JSONException e) {
 			message = e.getMessage();
