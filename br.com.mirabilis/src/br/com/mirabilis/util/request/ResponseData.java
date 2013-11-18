@@ -13,6 +13,7 @@ public class ResponseData<T> implements Serializable {
 	private T data;
 	private String message;
 	private boolean successfully;
+	private Exception exception;
 	
 	/**
 	 * Serialização
@@ -23,6 +24,14 @@ public class ResponseData<T> implements Serializable {
 		this.successfully = successfully;
 		this.message = message;
 		this.data = data;
+	}
+	
+	public void setException(Exception exception) {
+		this.exception = exception;
+	}
+	
+	public Exception getException() {
+		return exception;
 	}
 	
 	public boolean isSuccessfully() {
