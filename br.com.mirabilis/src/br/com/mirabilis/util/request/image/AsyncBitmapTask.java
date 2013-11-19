@@ -65,45 +65,42 @@ public class AsyncBitmapTask extends AsyncTaskBase<Void, Void, Bitmap> {
 	@Override
 	protected ResponseData<Bitmap> doInBackground(Void... params) {
 
-		ResponseData<InputStream> response = null;
+		ResponseData<Bitmap> data = null;
 		HttpRequest request = null;
-
+		InputStream inputStream = null;
 		if (useBuffer) {
 			bmp = BufferImage.getBitmap(url);
 			if (bmp == null) {
 				try {
 					request = HttpRequest.create(context, HttpType.JAKARTA);
-					response = request.get(url);
-					if (response.isSuccessfully()) {
-						bmp = BitmapFactory.decodeStream(response.getData());
+					inputStream = request.get(url);
+					if (inputStream != null) {
+						bmp = BitmapFactory.decodeStream(inputStream);
 						BufferImage.addBitmap(url, bmp);
-						return new ResponseData<Bitmap>(true,
-								response.getMessage(), bmp);
-					} else {
-						return new ResponseData<Bitmap>(false,
-								response.getMessage(), null);
+						data = new ResponseData<Bitmap>(true, bmp);
 					}
 				} catch (HttpRequestException e) {
-					return new ResponseData<Bitmap>(false, e.getMessage(), null);
+					data = new ResponseData<Bitmap>(false, e, null);
+				} catch (Exception e) {
+					data = new ResponseData<Bitmap>(false, e, null);
 				}
 			} else {
-				return new ResponseData<Bitmap>(true, null, bmp);
+				data = new ResponseData<Bitmap>(true, bmp);
 			}
 		} else {
 			try {
 				request = HttpRequest.create(context, HttpType.JAKARTA);
-				response = request.get(url);
-				if (response.isSuccessfully()) {
-					bmp = BitmapFactory.decodeStream(response.getData());
-					return new ResponseData<Bitmap>(true,
-							response.getMessage(), bmp);
-				} else {
-					return new ResponseData<Bitmap>(false,
-							response.getMessage(), null);
+				inputStream = request.get(url);
+				if (inputStream != null) {
+					bmp = BitmapFactory.decodeStream(inputStream);
+					data = new ResponseData<Bitmap>(true, bmp);
 				}
 			} catch (HttpRequestException e) {
-				return new ResponseData<Bitmap>(false, e.getMessage(), null);
+				data = new ResponseData<Bitmap>(false, e, null);
+			} catch (Exception e) {
+				data = new ResponseData<Bitmap>(false, e, null);
 			}
 		}
+		return data;
 	}
 }

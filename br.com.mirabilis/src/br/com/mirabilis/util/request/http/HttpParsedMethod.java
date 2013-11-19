@@ -1,7 +1,14 @@
 package br.com.mirabilis.util.request.http;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.json.JSONException;
 import org.json.JSONObject;
+
 import br.com.mirabilis.util.request.ResponseData;
+import br.com.mirabilis.util.request.http.exception.HttpRequestException;
 import br.com.mirabilis.util.request.http.listener.HttpRequestListener;
 
 /**
@@ -18,8 +25,11 @@ public interface HttpParsedMethod {
 	 * @param url
 	 *            to download file.
 	 * @return {@link ResponseData} with array of bytes from image.
+	 * @throws IOException 
+	 * @throws HttpRequestException 
+	 * @throws ClientProtocolException 
 	 */
-	public ResponseData<String> downloadFile(String url);
+	public String downloadFile(String url) throws ClientProtocolException, HttpRequestException, IOException;
 
 	/**
 	 * Do download image.
@@ -27,16 +37,22 @@ public interface HttpParsedMethod {
 	 * @param url
 	 *            to download image.
 	 * @return {@link ResponseData} with array of bytes from image.
+	 * @throws IOException 
+	 * @throws HttpRequestException 
 	 */
-	public ResponseData<byte[]> downloadImage(String url);
+	public byte[] downloadImage(String url) throws IOException, HttpRequestException;
 
 	/**
 	 * Call http get {@link JSONObject}
 	 * 
 	 * @param url
 	 * @return
+	 * @throws IOException 
+	 * @throws HttpRequestException 
+	 * @throws ClientProtocolException 
+	 * @throws JSONException 
 	 */
-	public ResponseData<JSONObject> getJson(String url);
+	public JSONObject getJson(String url) throws ClientProtocolException, HttpRequestException, IOException, JSONException;
 
 	/**
 	 * Responsible for sending a post called XML.
@@ -47,9 +63,12 @@ public interface HttpParsedMethod {
 	 *            content xml in string
 	 * @param listener
 	 *            to response data.
+	 * @throws IOException 
+	 * @throws HttpRequestException 
+	 * @throws ClientProtocolException 
 	 */
 	public void postXML(String url, String xml,
-			HttpRequestListener<String> listener);
+			HttpRequestListener<String> listener) throws ClientProtocolException, HttpRequestException, IOException;
 
 	/**
 	 * Responsible for sending a post called XML.
@@ -64,10 +83,14 @@ public interface HttpParsedMethod {
 	 *            Timeout that will run until the connection established.
 	 * @param timeoutSocket
 	 *            Timeout will be the waiting time that the client waits.
+	 * @throws HttpRequestException 
+	 * @throws UnsupportedEncodingException 
+	 * @throws IOException 
+	 * @throws ClientProtocolException 
 	 */
 	public void postXML(String url, String xml,
 			HttpRequestListener<String> listener, String cryptFormat,
-			int timeoutConnection, int timeoutSocket);
+			int timeoutConnection, int timeoutSocket) throws HttpRequestException, UnsupportedEncodingException, ClientProtocolException, IOException;
 
 	/**
 	 * The caller sending a Json post.
@@ -82,9 +105,14 @@ public interface HttpParsedMethod {
 	 *            Timeout that will run until the connection established.
 	 * @param timeoutSocket
 	 *            Timeout will be the waiting time that the client waits.
+	 * @throws UnsupportedEncodingException 
+	 * @throws IOException 
+	 * @throws ClientProtocolException 
+	 * @throws HttpRequestException 
+	 * @throws JSONException 
 	 */
 	public void postJson(String url, JSONObject json,
 			HttpRequestListener<JSONObject> listener, String cryptFormat,
-			int timeoutConnection, int timeoutSocket);
+			int timeoutConnection, int timeoutSocket) throws UnsupportedEncodingException, ClientProtocolException, IOException, HttpRequestException, JSONException;
 
 }

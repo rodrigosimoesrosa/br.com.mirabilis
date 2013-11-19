@@ -3,45 +3,85 @@ package br.com.mirabilis.util.request;
 import java.io.Serializable;
 
 /**
- * Objeto de resposta genérico para AsyncTask e subtipos.
+ * Response object containing generic exceptions.
  * @author Rodrigo, Anderson
  *
  * @param <T>
  */
-public class ResponseData<T> implements Serializable {
+public final class ResponseData<T> implements Serializable {
 
 	private T data;
-	private String message;
 	private boolean successfully;
 	private Exception exception;
+	private String message;
 	
 	/**
-	 * Serialização
+	 * Serialization.
 	 */
 	private static final long serialVersionUID = -1396907768012910102L;
 	
-	public ResponseData(boolean successfully, String message, T data) {
-		this.successfully = successfully;
-		this.message = message;
-		this.data = data;
+	/**
+	 * Constructor.
+	 * @param successfully
+	 * @param exception
+	 * @param data
+	 */
+	public ResponseData(boolean successfully, T data) {
+		this(successfully, null, data);
 	}
 	
-	public void setException(Exception exception) {
+	/**
+	 * Constructor.
+	 * @param successfully
+	 * @param message
+	 * @param data
+	 */
+	public ResponseData(boolean successfully, Exception exception, T data) {
+		this.successfully = successfully;
+		this.data = data;
 		this.exception = exception;
 	}
 	
-	public Exception getException() {
-		return exception;
+	/**
+	 * Set message.
+	 * @param message
+	 */
+	public void setMessage(String message){
+		this.message = message;
 	}
 	
-	public boolean isSuccessfully() {
-		return successfully;
-	}
-	
+	/**
+	 * Return message.
+	 * @return
+	 */
 	public String getMessage() {
 		return message;
 	}
 	
+	/**
+	 * Return exception generic.
+	 * @return
+	 */
+	public Exception getException() {
+		return exception;
+	}
+	
+	/**
+	 * Return boolean is successfully.
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean isSuccessfully() throws Exception {
+		if(exception != null){
+			throw exception;
+		}
+		return successfully;
+	}
+	
+	/**
+	 * Return data T.
+	 * @return
+	 */
 	public T getData() {
 		return data;
 	}

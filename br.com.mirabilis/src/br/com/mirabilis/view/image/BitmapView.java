@@ -144,13 +144,15 @@ public class BitmapView extends RelativeLayout {
 		
 		public void onPosExecute(ResponseData<Bitmap> response) {
 			preloader.setVisibility(View.GONE);
-			if(response.isSuccessfully()){
-				if(type.equals(ImageType.RESOURCE)){
-					imageView.setImageResource(imageResource);	
-				}else{
-					imageView.setImageBitmap(response.getData());
+			try {
+				if(response.isSuccessfully()){
+					if(type.equals(ImageType.RESOURCE)){
+						imageView.setImageResource(imageResource);	
+					}else{
+						imageView.setImageBitmap(response.getData());
+					}
 				}
-			}else{
+			} catch (Exception e) {
 				if(defaultImage == 0){
 					imageView.setImageDrawable(getResources().getDrawable(R.drawable.unknow));
 				}else{
