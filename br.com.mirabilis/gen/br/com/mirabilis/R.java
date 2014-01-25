@@ -337,7 +337,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:pageHeight
+          @attr name br.com.mirabilis:pageHeight
         */
         public static final int HorizontalScrollGallery_pageHeight = 1;
         /**
@@ -353,7 +353,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:pageWidth
+          @attr name br.com.mirabilis:pageWidth
         */
         public static final int HorizontalScrollGallery_pageWidth = 0;
         /** Attributes that can be used with a NumberPickerAttribute.
@@ -386,7 +386,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:currentValue
+          @attr name br.com.mirabilis:currentValue
         */
         public static final int NumberPickerAttribute_currentValue = 3;
         /**
@@ -396,7 +396,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:idLayout
+          @attr name br.com.mirabilis:idLayout
         */
         public static final int NumberPickerAttribute_idLayout = 0;
         /**
@@ -410,7 +410,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:maxValue
+          @attr name br.com.mirabilis:maxValue
         */
         public static final int NumberPickerAttribute_maxValue = 2;
         /**
@@ -424,7 +424,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:minValue
+          @attr name br.com.mirabilis:minValue
         */
         public static final int NumberPickerAttribute_minValue = 1;
     };
