@@ -5,12 +5,13 @@ import java.io.InputStream;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import br.com.mirabilis.http.HttpBuilder;
+import br.com.mirabilis.http.HttpRequest;
+import br.com.mirabilis.http.exception.HttpRequestException;
+import br.com.mirabilis.http.info.HttpType;
 import br.com.mirabilis.util.image.BufferImage;
 import br.com.mirabilis.util.request.AsyncTaskBase;
 import br.com.mirabilis.util.request.ResponseData;
-import br.com.mirabilis.util.request.http.HttpRequest;
-import br.com.mirabilis.util.request.http.HttpRequest.HttpType;
-import br.com.mirabilis.util.request.http.exception.HttpRequestException;
 import br.com.mirabilis.util.request.listener.DelegateListener;
 
 /**
@@ -72,7 +73,7 @@ public class AsyncBitmapTask extends AsyncTaskBase<Void, Void, Bitmap> {
 			bmp = BufferImage.getBitmap(url);
 			if (bmp == null) {
 				try {
-					request = HttpRequest.create(context, HttpType.JAKARTA);
+					request = HttpBuilder.build(HttpType.JAKARTA);
 					inputStream = request.get(url);
 					if (inputStream != null) {
 						bmp = BitmapFactory.decodeStream(inputStream);
@@ -89,7 +90,7 @@ public class AsyncBitmapTask extends AsyncTaskBase<Void, Void, Bitmap> {
 			}
 		} else {
 			try {
-				request = HttpRequest.create(context, HttpType.JAKARTA);
+				request = HttpBuilder.build(HttpType.JAKARTA);
 				inputStream = request.get(url);
 				if (inputStream != null) {
 					bmp = BitmapFactory.decodeStream(inputStream);
