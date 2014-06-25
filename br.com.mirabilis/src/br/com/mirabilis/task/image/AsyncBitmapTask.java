@@ -1,4 +1,4 @@
-package br.com.mirabilis.util.request.image;
+package br.com.mirabilis.task.image;
 
 import java.io.InputStream;
 
@@ -9,10 +9,10 @@ import br.com.mirabilis.http.HttpBuilder;
 import br.com.mirabilis.http.HttpRequest;
 import br.com.mirabilis.http.exception.HttpRequestException;
 import br.com.mirabilis.http.info.HttpType;
+import br.com.mirabilis.task.AsyncTaskBase;
+import br.com.mirabilis.task.delegate.DelegateListener;
+import br.com.mirabilis.task.util.ResponseData;
 import br.com.mirabilis.util.image.BufferImage;
-import br.com.mirabilis.util.request.AsyncTaskBase;
-import br.com.mirabilis.util.request.ResponseData;
-import br.com.mirabilis.util.request.listener.DelegateListener;
 
 /**
  * AsyncBitmapTask, tarefa responsável pelo carregamento de uma imagem,

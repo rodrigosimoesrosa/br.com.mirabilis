@@ -1,4 +1,4 @@
-package br.com.mirabilis.util.request;
+package br.com.mirabilis.task.util;
 
 import java.io.Serializable;
 

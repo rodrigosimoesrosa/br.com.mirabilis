@@ -10,9 +10,9 @@ import android.widget.ImageView.ScaleType;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import br.com.mirabilis.R;
-import br.com.mirabilis.util.request.ResponseData;
-import br.com.mirabilis.util.request.image.AsyncBitmapTask;
-import br.com.mirabilis.util.request.listener.DelegateListener;
+import br.com.mirabilis.task.delegate.DelegateListener;
+import br.com.mirabilis.task.image.AsyncBitmapTask;
+import br.com.mirabilis.task.util.ResponseData;
 
 /**
  * {@link BitmapView} you may receive an image url or resource to an image embedded in the project.

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.googlecode.androidannotations.annotations.ViewById;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,6 +27,8 @@ public class BannerFragment extends Fragment {
 	private List<String> urls;
 	private View view;
 	private Timer timer;
+	
+	@ViewById
 	private HorizontalScrollGallery gallery;
 	
 	public static final int DELAY = 5000;
@@ -85,16 +89,8 @@ public class BannerFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		this.view = inflater.inflate(this.layout, container,false);
-		setParams();
 		setListener();
 		return this.view;
-	}
-	
-	/**
-	 * Seta os parâmetros.
-	 */
-	private void setParams(){
-		this.gallery = (HorizontalScrollGallery) this.view.findViewById(R.id.gallery);
 	}
 	
 	/**

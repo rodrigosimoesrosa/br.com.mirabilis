@@ -6,5 +6,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="libs/mirabilis-http.jar"/>
+	<classpathentry kind="lib" path="libs/androidannotations-2.7.1.jar"/>
+	<classpathentry kind="lib" path="libs/androidannotations-api-2.7.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
