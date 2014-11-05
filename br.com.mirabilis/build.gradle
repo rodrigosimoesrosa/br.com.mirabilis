@@ -5,6 +5,7 @@ dependencies {
 }
 
 android {
+    compileOptions.encoding = 'windows-1251'
     compileSdkVersion 8
     buildToolsVersion "20.0.0"
 

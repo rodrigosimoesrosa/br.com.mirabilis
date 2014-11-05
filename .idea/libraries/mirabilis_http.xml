@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mirabilis-http">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/br.com.mirabilis/libs/mirabilis-http.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

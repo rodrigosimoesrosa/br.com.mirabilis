@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+	<br.com.phoenix.afrodite.view.gallery.horizontal.HorizontalScrollGallery
+        android:id="@+id/gallery"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+    </br.com.phoenix.afrodite.view.gallery.horizontal.HorizontalScrollGallery>
+    
+</RelativeLayout>
+<!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis/res/layout/banner.xml -->

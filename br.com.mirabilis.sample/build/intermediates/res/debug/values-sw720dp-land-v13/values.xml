@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis.sample/build/intermediates/exploded-aar/br.com.mirabilis/br.com.mirabilis/unspecified/res/values-sw720dp-land-v13/values.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">128dp</dimen>
+
+</resources>

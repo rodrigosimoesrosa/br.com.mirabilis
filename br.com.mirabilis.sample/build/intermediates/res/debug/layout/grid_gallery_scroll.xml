@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/previows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/previows_selector" />
+
+    <br.com.phoenix.afrodite.view.gallery.horizontal.HorizontalScrollGallery
+        android:id="@+id/gallery_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_toRightOf="@+id/previows" >
+    </br.com.phoenix.afrodite.view.gallery.horizontal.HorizontalScrollGallery>
+
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/next_selector" />
+
+</RelativeLayout><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis/res/layout/grid_gallery_scroll.xml --><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis.sample/build/intermediates/exploded-aar/br.com.mirabilis/br.com.mirabilis/unspecified/res/layout/grid_gallery_scroll.xml -->

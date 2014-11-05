@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <bitmap android:src="@drawable/previows_pressed"/>
+    </item>
+    
+    <item>
+        <bitmap android:src="@drawable/previows"/>
+    </item>
+    
+</selector><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis/res/drawable/previows_selector.xml --><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis.sample/build/intermediates/exploded-aar/br.com.mirabilis/br.com.mirabilis/unspecified/res/drawable/previows_selector.xml -->

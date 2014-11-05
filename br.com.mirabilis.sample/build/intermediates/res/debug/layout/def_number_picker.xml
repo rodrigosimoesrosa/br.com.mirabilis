@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <EditText
+        android:id="@+id/txtTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:inputType="number"
+        android:minWidth="50dp"
+        android:padding="2dp"
+        android:textColor="@color/white"
+        android:textSize="19dp" />
+
+    <ImageView
+        android:id="@+id/btnIncrement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@+id/txtTarget"
+        android:background="@drawable/number_picker_inc_selector"
+        android:padding="10dp"
+        android:src="@android:drawable/arrow_up_float" />
+
+    <ImageView
+        android:id="@+id/btnDecrement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_alignLeft="@+id/btnIncrement"
+        android:layout_alignRight="@+id/btnIncrement"
+        android:layout_below="@+id/btnIncrement"
+        android:background="@drawable/number_picker_dec_selector"
+        android:padding="10dp"
+        android:src="@android:drawable/arrow_down_float" />
+
+</RelativeLayout><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis/res/layout/def_number_picker.xml --><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis.sample/build/intermediates/exploded-aar/br.com.mirabilis/br.com.mirabilis/unspecified/res/layout/def_number_picker.xml -->

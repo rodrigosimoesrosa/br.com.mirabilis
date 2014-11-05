@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/field" />
+    <stroke android:width="1dip" android:color="@color/borderField"/>
+</shape><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis/res/drawable/border.xml --><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis.sample/build/intermediates/exploded-aar/br.com.mirabilis/br.com.mirabilis/unspecified/res/drawable/border.xml -->

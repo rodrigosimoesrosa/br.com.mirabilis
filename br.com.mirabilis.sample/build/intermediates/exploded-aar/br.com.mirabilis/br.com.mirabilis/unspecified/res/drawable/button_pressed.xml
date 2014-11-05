@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+	<solid android:color="@color/gray"/>
+	<padding android:top="5dp" android:bottom="5dp"/>
+	<corners android:radius="7dip"/>
+	<stroke android:width="1dip" android:color="@color/white"/>
+</shape>
+<!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis/res/drawable/button_pressed.xml -->

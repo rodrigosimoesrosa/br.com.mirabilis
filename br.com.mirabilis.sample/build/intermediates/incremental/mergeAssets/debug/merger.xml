@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build-types\debug\assets" />
+    </dataSet>
+
+</merger>

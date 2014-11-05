@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/br.com.mirabilis.iml" filepath="$PROJECT_DIR$/br.com.mirabilis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br.com.mirabilis/br.com.mirabilis-br.com.mirabilis.iml" filepath="$PROJECT_DIR$/br.com.mirabilis/br.com.mirabilis-br.com.mirabilis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br.com.mirabilis.sample/br.com.mirabilis.sample.iml" filepath="$PROJECT_DIR$/br.com.mirabilis.sample/br.com.mirabilis.sample.iml" />
+    </modules>
+  </component>
+</project>
+

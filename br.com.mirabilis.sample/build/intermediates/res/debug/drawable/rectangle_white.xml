@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:bottom="3px">
+		<shape  android:shape="rectangle">
+			<solid android:color="@color/white" />
+		    <corners android:radius="7dp" />
+		</shape>
+	</item>
+</layer-list>
+
+<!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis/res/drawable/rectangle_white.xml --><!-- From: file:/D:/development/android/projects/mirabilis/br.com.mirabilis/br.com.mirabilis.sample/build/intermediates/exploded-aar/br.com.mirabilis/br.com.mirabilis/unspecified/res/drawable/rectangle_white.xml -->

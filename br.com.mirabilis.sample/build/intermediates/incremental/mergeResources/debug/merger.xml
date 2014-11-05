@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res" >
+            <file
+                name="border"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\border.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="button"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="button_pressed"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\button_pressed.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="next_selector"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\next_selector.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="number_picker_dec_selector"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\number_picker_dec_selector.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="number_picker_inc_selector"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\number_picker_inc_selector.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="previows_selector"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\previows_selector.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="rectangle_black"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\rectangle_black.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="rectangle_white"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\rectangle_white.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="selector_button"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable\selector_button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-hdpi-v4\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="next"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-hdpi-v4\next.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="next_pressed"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-hdpi-v4\next_pressed.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="previows"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-hdpi-v4\previows.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="previows_pressed"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-hdpi-v4\previows_pressed.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="unknow"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-hdpi-v4\unknow.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-mdpi-v4\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-xhdpi-v4\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\drawable-xxhdpi-v4\ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="banner"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\banner.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="bitmap_view"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\bitmap_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="def_number_picker"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\def_number_picker.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="grid_gallery"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\grid_gallery.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="grid_gallery_scroll"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\grid_gallery_scroll.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="horizontal_gallery_item"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\horizontal_gallery_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="menu_base"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\menu_base.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="mirabilis"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\layout\mirabilis.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\values\values.xml"
+                qualifiers="" >
+                <color name="lightsalmon" >#ffa07a
+                </color>
+                <color name="darkcyan" >#008b8b
+                </color>
+                <color name="olivedrab" >#6b8e23
+                </color>
+                <color name="lightcyan" >#e0ffff
+                </color>
+                <color name="maroon" >#800000
+                </color>
+                <color name="mediumspringgreen" >#00fa9a
+                </color>
+                <color name="button_green" >#86CF5A
+                </color>
+                <color name="royalblue" >#4169e1
+                </color>
+                <color name="darkmagenta" >#8b008b
+                </color>
+                <color name="darkgreen" >#006400
+                </color>
+                <color name="buttonbackgroundseletected" >#178FCE
+                </color>
+                <color name="mintcream" >#f5fffa
+                </color>
+                <color name="seagreen" >#2e8b57
+                </color>
+                <color name="button_gray" >#444
+                </color>
+                <color name="transparent" >#00000000
+                </color>
+                <color name="peru" >#cd853f
+                </color>
+                <color name="dimgray" >#696969
+                </color>
+                <color name="field" >#1379B0
+                </color>
+                <color name="floralwhite" >#fffaf0
+                </color>
+                <color name="button_blue" >#116897
+                </color>
+                <color name="beige" >#f5f5dc
+                </color>
+                <color name="orchid" >#da70d6
+                </color>
+
+                <style name="keyboardButtons" >
+                    <item name="android:paddingLeft">
+20dp
+                    </item>
+                    <item name="android:paddingRight">
+20dp
+                    </item>
+                    <item name="android:paddingTop">
+15dp
+                    </item>
+                    <item name="android:paddingBottom">
+15dp
+                    </item>
+                    <item name="android:shadowColor">
+@color/white_transparent
+                    </item>
+                    <item name="android:shadowRadius">
+1.5
+                    </item>
+                    <item name="android:shadowDx">
+1
+                    </item>
+                    <item name="android:shadowDy">
+1
+                    </item>
+                    <item name="android:textSize">
+65sp
+                    </item>
+                    <item name="android:textStyle">
+bold
+                    </item>
+                    <item name="android:typeface">
+sans
+                    </item>
+                    <item name="android:textColor">
+@color/white
+                    </item>
+                    <item name="android:lineSpacingExtra">
+5dp
+                    </item>
+                    <item name="android:gravity">
+center
+                    </item>
+                </style>
+
+                <color name="button_gray_shadow" >#88aaaaaa
+                </color>
+                <color name="lavenderblush" >#fff0f5
+                </color>
+                <color name="bisque" >#ffe4c4
+                </color>
+                <color name="goldenrod" >#daa520
+                </color>
+                <color name="titleShadow" >#05202E
+                </color>
+
+                <string name="ok" >OK
+                </string>
+
+                <color name="palegreen" >#98fb98
+                </color>
+                <color name="imageBackground" >#CCE4F2
+                </color>
+                <color name="mediumturquoise" >#48d1cc
+                </color>
+                <color name="green" >#008000
+                </color>
+                <color name="darkslategray" >#2f4f4f
+                </color>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+
+                <color name="yellowgreen" >#9acd32
+                </color>
+                <color name="lime" >#00ff00
+                </color>
+                <color name="chocolate" >#d2691e
+                </color>
+
+                <style
+                    name="textAccountProduct"
+                    parent="@android:style/TextAppearance.Medium" >
+                    <item name="android:textSize">
+20sp
+                    </item>
+                    <item name="android:textStyle">
+normal
+                    </item>
+                    <item name="android:textColor">
+@color/red
+                    </item>
+                </style>
+
+                <color name="darkslateblue" >#483d8b
+                </color>
+                <color name="buttonbackground" >#126FA0
+                </color>
+                <color name="ghostwhite" >#f8f8ff
+                </color>
+                <color name="oldlace" >#fdf5e6
+                </color>
+                <color name="purple" >#800080
+                </color>
+                <color name="darkblue" >#00008b
+                </color>
+                <color name="burlywood" >#deb887
+                </color>
+                <color name="white" >#ffffff
+                </color>
+                <color name="mediumvioletred" >#c71585
+                </color>
+                <color name="palevioletred" >#db7093
+                </color>
+
+                <string name="base" >Base
+                </string>
+
+                <color name="steelblue" >#4682b4
+                </color>
+                <color name="darkkhaki" >#bdb76b
+                </color>
+                <color name="rosybrown" >#bc8f8f
+                </color>
+                <color name="dodgerblue" >#1e90ff
+                </color>
+                <color name="midnightblue" >#191970
+                </color>
+
+                <string name="bannerItem" >BannerItem
+                </string>
+
+                <color name="arthemis" >#779c8a
+                </color>
+                <color name="button_green_pressed" >#43BA3F
+                </color>
+                <color name="salmon" >#fa8072
+                </color>
+                <color name="peachpuff" >#ffdab9
+                </color>
+                <color name="lightblue" >#add8e6
+                </color>
+
+                <declare-styleable name="NumberPickerAttribute" >
+                    <attr
+                        name="idLayout"
+                        format="reference" />
+                    <attr
+                        name="minValue"
+                        format="integer" />
+                    <attr
+                        name="maxValue"
+                        format="integer" />
+                    <attr
+                        name="currentValue"
+                        format="integer" />
+                </declare-styleable>
+
+                <color name="black" >#000000
+                </color>
+                <color name="crimson" >#dc143c
+                </color>
+                <color name="darkorange" >#ff8c00
+                </color>
+                <color name="gainsboro" >#dcdcdc
+                </color>
+                <color name="saddlebrown" >#8b4513
+                </color>
+
+                <string name="keyboardButtonSeg" >Seg.
+                </string>
+
+                <color name="button_red" >#D14140
+                </color>
+                <color name="borderField" >#093953
+                </color>
+
+                <style
+                    name="textAccount"
+                    parent="@android:style/TextAppearance.Medium" >
+                    <item name="android:textSize">
+23sp
+                    </item>
+                    <item name="android:textStyle">
+normal
+                    </item>
+                </style>
+
+                <color name="cadetblue" >#5f9ea0
+                </color>
+                <color name="darkolivegreen" >#556b2f
+                </color>
+                <color name="tomato" >#ff6347
+                </color>
+                <color name="white_transparent" >#88ffffff
+                </color>
+                <color name="aquamarine" >#7fffd4
+                </color>
+                <color name="darkred" >#8b0000
+                </color>
+                <color name="indianred" >#cd5c5c
+                </color>
+                <color name="lightpink" >#ffb6c1
+                </color>
+                <color name="mediumaquamarine" >#66cdaa
+                </color>
+
+                <declare-styleable name="HorizontalScrollGallery" >
+                    <attr
+                        name="pageWidth"
+                        format="dimension" />
+                    <attr
+                        name="pageHeight"
+                        format="dimension" />
+                </declare-styleable>
+
+                <color name="forestgreen" >#228b22
+                </color>
+                <color name="mediumpurple" >#9370db
+                </color>
+
+                <style name="textButtons" >
+                    <item name="android:paddingLeft">
+20dp
+                    </item>
+                    <item name="android:paddingRight">
+20dp
+                    </item>
+                    <item name="android:paddingTop">
+15dp
+                    </item>
+                    <item name="android:paddingBottom">
+15dp
+                    </item>
+                    <item name="android:shadowColor">
+@color/white_transparent
+                    </item>
+                    <item name="android:shadowRadius">
+1.5
+                    </item>
+                    <item name="android:shadowDx">
+1
+                    </item>
+                    <item name="android:shadowDy">
+1
+                    </item>
+                    <item name="android:textSize">
+26sp
+                    </item>
+                    <item name="android:textStyle">
+bold
+                    </item>
+                    <item name="android:typeface">
+sans
+                    </item>
+                    <item name="android:textColor">
+@color/white
+                    </item>
+                    <item name="android:lineSpacingExtra">
+5dp
+                    </item>
+                    <item name="android:gravity">
+center
+                    </item>
+                </style>
+
+                <color name="wheat" >#f5deb3
+                </color>
+                <color name="cornflowerblue" >#6495ed
+                </color>
+                <color name="borderbuttonselected" >#106693
+                </color>
+                <color name="darksalmon" >#e9967a
+                </color>
+                <color name="mediumorchid" >#ba55d3
+                </color>
+                <color name="cyan" >#00ffff
+                </color>
+                <color name="thistle" >#d8bfd8
+                </color>
+                <color name="ivory" >#fffff0
+                </color>
+                <color name="silver" >#c0c0c0
+                </color>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <color name="cornsilk" >#fff8dc
+                </color>
+                <color name="slategray" >#708090
+                </color>
+
+                <string name="keyboardAlphabetic" >ABC
+                </string>
+
+                <color name="aliceblue" >#f0f8ff
+                </color>
+                <color name="lightgoldenrodyellow" >#fafad2
+                </color>
+                <color name="limegreen" >#32cd32
+                </color>
+                <color name="powderblue" >#b0e0e6
+                </color>
+
+                <string name="title" ></string>
+
+                <color name="indigo" >#4b0082
+                </color>
+                <color name="lightsteelblue" >#b0c4de
+                </color>
+                <color name="slateblue" >#6a5acd
+                </color>
+                <color name="darkgoldenrod" >#b8860b
+                </color>
+                <color name="springgreen" >#00ff7f
+                </color>
+                <color name="lightyellow" >#ffffe0
+                </color>
+                <color name="seashell" >#fff5ee
+                </color>
+                <color name="blueviolet" >#8a2be2
+                </color>
+                <color name="orangered" >#ff4500
+                </color>
+                <color name="brown" >#a52a2a
+                </color>
+                <color name="snow" >#fffafa
+                </color>
+
+                <string name="keyboardNumber" >123
+                </string>
+
+                <color name="whitesmoke" >#f5f5f5
+                </color>
+                <color name="honeydew" >#f0fff0
+                </color>
+                <color name="pink" >#ffc0cb
+                </color>
+
+                <style
+                    name="TitleShadow"
+                    parent="@android:style/TextAppearance.Medium" >
+                    <item name="android:shadowColor">
+@color/titleShadow
+                    </item>
+                    <item name="android:shadowRadius">
+1
+                    </item>
+                    <item name="android:shadowDx">
+3
+                    </item>
+                    <item name="android:shadowDy">
+3
+                    </item>
+                    <item name="android:textSize">
+22sp
+                    </item>
+                    <item name="android:textStyle">
+bold
+                    </item>
+                    <item name="android:textColor">
+@color/white
+                    </item>
+                </style>
+
+                <color name="button_shadow" >#88000000
+                </color>
+                <color name="firebrick" >#b22222
+                </color>
+                <color name="lightseagreen" >#20b2aa
+                </color>
+
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+
+                <color name="antiquewhite" >#faebd7
+                </color>
+                <color name="button_red_pressed" >#AB2623
+                </color>
+                <color name="black_transparent" >#99000000
+                </color>
+                <color name="deepskyblue" >#00bfff
+                </color>
+                <color name="coral" >#ff7f50
+                </color>
+                <color name="teal" >#008080
+                </color>
+                <color name="blue" >#0000ff
+                </color>
+                <color name="button_gray_pressed" >#222
+                </color>
+                <color name="orange" >#ffa500
+                </color>
+                <color name="gold" >#ffd700
+                </color>
+                <color name="lawngreen" >#7cfc00
+                </color>
+                <color name="gray" >#808080
+                </color>
+                <color name="sandybrown" >#f4a460
+                </color>
+                <color name="moccasin" >#ffe4b5
+                </color>
+                <color name="lavender" >#e6e6fa
+                </color>
+                <color name="alert" >#990000
+                </color>
+                <color name="button_blue_pressed" >#0A3566
+                </color>
+                <color name="mediumslateblue" >#7b68ee
+                </color>
+                <color name="magenta" >#ff00ff
+                </color>
+                <color name="lightgrey" >#d3d3d3
+                </color>
+                <color name="darkgray" >#a9a9a9
+                </color>
+                <color name="darkorchid" >#9932cc
+                </color>
+                <color name="hotpink" >#ff69b4
+                </color>
+                <color name="lightcoral" >#f08080
+                </color>
+
+                <style
+                    name="DialogTheme"
+                    parent="@android:style/Theme.Dialog" >
+                    <item name="android:windowBackground">
+@color/transparent
+                    </item>
+                </style>
+
+                <color name="violet" >#ee82ee
+                </color>
+                <color name="palegoldenrod" >#eee8aa
+                </color>
+                <color name="khaki" >#f0e68c
+                </color>
+                <color name="greenyellow" >#adff2f
+                </color>
+                <color name="darkturquoise" >#00ced1
+                </color>
+                <color name="papayawhip" >#ffefd5
+                </color>
+                <color name="navy" >#000080
+                </color>
+                <color name="blue_marine" >#062535
+                </color>
+                <color name="aqua" >#00ffff
+                </color>
+                <color name="darkviolet" >#9400d3
+                </color>
+                <color name="lightskyblue" >#87cefa
+                </color>
+                <color name="lightslategray" >#778899
+                </color>
+                <color name="sienna" >#a0522d
+                </color>
+                <color name="mistyrose" >#ffe4e1
+                </color>
+                <color name="lightgreen" >#90ee90
+                </color>
+                <color name="borderbutton" >#093B55
+                </color>
+                <color name="red" >#ff0000
+                </color>
+                <color name="blanchedalmond" >#ffebcd
+                </color>
+                <color name="linen" >#faf0e6
+                </color>
+                <color name="navajowhite" >#ffdead
+                </color>
+                <color name="yellow" >#ffff00
+                </color>
+                <color name="tan" >#d2b48c
+                </color>
+                <color name="fuchsia" >#ff00ff
+                </color>
+                <color name="paleturquoise" >#afeeee
+                </color>
+                <color name="azure" >#f0ffff
+                </color>
+
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+
+                <color name="darkseagreen" >#8fbc8f
+                </color>
+                <color name="mediumblue" >#0000cd
+                </color>
+                <color name="plum" >#dda0dd
+                </color>
+                <color name="deeppink" >#ff1493
+                </color>
+                <color name="mediumseagreen" >#3cb371
+                </color>
+                <color name="turquoise" >#40e0d0
+                </color>
+                <color name="chartreuse" >#7fff00
+                </color>
+                <color name="lemonchiffon" >#fffacd
+                </color>
+                <color name="olive" >#808000
+                </color>
+                <color name="skyblue" >#87ceeb
+                </color>
+            </file>
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\intermediates\exploded-aar\br.com.mirabilis\br.com.mirabilis\unspecified\res\values-sw720dp-land-v13\values.xml"
+                qualifiers="sw720dp-land-v13" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+        </source>
+    </dataSet>
+    <dataSet config="main" >
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res" >
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\drawable-xxhdpi\ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="activity_main"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\layout\activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\menu\main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\values\dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\values\strings.xml"
+                qualifiers="" >
+                <string name="hello_world" >Hello world!
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="app_name" >br.com.mirabilis.sample
+                </string>
+            </file>
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\values\styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+            </file>
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\values-v11\styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\values-v14\styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\res\values-w820dp\dimens.xml"
+                qualifiers="w820dp-v13" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
+            </file>
+        </source>
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\generated\res\rs\debug" />
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build\generated\res\generated\debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="D:\development\android\projects\mirabilis\br.com.mirabilis\br.com.mirabilis.sample\build-types\debug\res" />
+    </dataSet>
+
+</merger>
